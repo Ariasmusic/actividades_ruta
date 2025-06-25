@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rompecabezas Interactivo</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="config-toggle">
+    <button id="toggleConfig">
+      <span class="icon">⚙️</span>
+      <span class="label">Mostrar Configuración</span>
+    </button>
+  </div>
+  <section class="dashboard">
+    <div class="panel panel-controls">
+      <h2>Configuración</h2>
+      <label>Filas
+        <select id="rows">
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </label>
+
+      <label>Columnas
+        <select id="cols">
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </label>
+
+      <label>Imagen
+        <select id="imageSelect">
+          <option value="imgs/img1.jpg">Paisaje</option>
+          <option value="imgs/img2.jpg">Animales</option>
+          <option value="imgs/img3.jpg">Arte</option>
+        </select>
+      </label>
+
+      <div class="button-group">
+        <button onclick="generatePuzzle()">
+          <i class="fas fa-play"></i> Iniciar
+        </button>
+        <button onclick="restartPuzzle()">
+          <i class="fas fa-redo"></i> Reiniciar
+        </button>
+        <button id="themeToggle" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i> Modo oscuro
+        </button>
+      </div>
+    </div>
+  </section>
+  <main class="container">
+    <h1>⚔️ Rompecabezas Interactivo</h1>
+
+    <div>
+      <h2>Estado del juego</h2>
+      <div class="datos">
+        <p>⏱️ Tiempo: <span id="timer">0</span> segundos</p>
+        <p>🔁 Movimientos: <span id="moves">0</span></p>
+      </div>
+    </div>
+
+    <div id="puzzle"></div>
+  </main>
+
+  <audio id="moveSound" src="move.mp3" preload="auto"></audio>
+  <audio id="winSound" src="win.mp3" preload="auto"></audio>
+
+  <script src="Js/main.js"></script>
+</body>
+
+</html>
