@@ -53,20 +53,6 @@ function voltearCarta(carta) {
     }
 }
 
-function verificarPareja() {
-    if (primera.dataset.lugar === segunda.dataset.lugar) {
-        aciertos++;
-        if (aciertos === lugares.length) {
-            mensaje.textContent = '¡Felicitaciones! Completaste la Ruta Libertadora';
-        }
-    } else {
-        primera.classList.remove('volteada');
-        segunda.classList.remove('volteada');
-    }
-    [primera, segunda] = [null, null];
-    bloqueo = false;
-}
-
 function mezclarCartas() {
     cartas.sort(() => 0.5 - Math.random());
 }
@@ -84,6 +70,8 @@ function iniciarJuego() {
 function reiniciarJuego() {
     [primera, segunda] = [null, null];
     bloqueo = false;
+    mensaje.style.display = 'none';
+
     iniciarJuego();
 }
 
@@ -105,7 +93,8 @@ function verificarPareja() {
         aciertos++;
         sonidoAcierto.play();
         if (aciertos === lugares.length) {
-            mensaje.textContent = '¡Felicitaciones! Completaste la Ruta Libertadora 🇨🇴';
+            mensaje.style.display = 'block';
+            mensaje.textContent = '📚¡Felicitaciones! Completaste la Ruta Libertadora de 1819🗡️';
             sonidoVictoria.play();
         }
     } else {
