@@ -12,19 +12,15 @@
      font-size: 1.8em;
      font-weight: bold;
  }
-.contenedor{
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: auto 1fr;
-    gap: 20px;  
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+
+ .contenedor {
+     display: flex;
+     justify-content: space-around;
+ }
+
  .tablero {
      display: grid;
-     grid-template-columns: repeat( 4, 120px);
+     grid-template-columns: repeat(4, 120px);
      gap: 15px;
      justify-content: center;
      margin: 40px auto;
@@ -78,13 +74,25 @@
      font-size: 2em;
      margin-top: 20px;
      color: #ffff3f;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: rgba(0, 0, 0, 0.9);
+     padding: 40px;
+     border-radius: 15px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+     z-index: 1000;
+     text-align: center;
+     display: none;
  }
+
 
  .botones {
      display: flex;
      justify-content: center;
      gap: 20px;
-     margin:20px;
+     margin: 20px;
  }
 
  button {
