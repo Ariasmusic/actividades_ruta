@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruta Libertadora de Colombia - Actividades</title>
+  <link rel="stylesheet" href="assets/Css/style.css" />
+  <link rel="shortcut icon" href="assets/imgs/icon.png" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <h1>Ruta Libertadora de 1819</h1>
+    <p>Explora estas actividades educativas interactivas</p>
+  </header>
+  <!-- <marquee behavior="scroll" direction="right" scrollamount="40"> -->
+  <main>
+
+    <div class="card-container">
+      <div class="card" onclick="irActividad('src/pages/Rompecabezas/rompecabezas.html')">
+        <img src="assets/imgs/rompecabezas.png" alt="Rompecabezas">
+        <div class="info">
+          <h2>Rompecabezas</h2>
+          <p>Arma la imagen con piezas relacionadas a los lugares recorridos por los patriotas.</p>
+        </div>
+      </div>
+      <div class="card" onclick="irActividad('src/pages/Memoria/memoria.html')">
+        <img src="assets/imgs/memoria.png" alt="Juego de Memoria">
+        <div class="info">
+          <h2>Juego de Memoria</h2>
+          <p>Relaciona imágenes y momentos clave de la Ruta Libertadora.</p>
+        </div>
+      </div>
+      <div class="card" onclick="irActividad('src/pages/Relación/relacion.html')">
+        <img src="assets/imgs/relacion.png" alt="Relación">
+        <div class="info">
+          <h2>Relación</h2>
+          <p>Une textos y lugares históricos de forma interactiva.</p>
+        </div>
+      </div>
+      <div class="card" onclick="irActividad('src/pages/Chat-Bot/chat-bot.html')">
+        <img src="assets/imgs/chat-bot.png" alt="chat-bot">
+        <div class="info">
+          <h2>Chat-Bot</h2>
+          <p>Chatea y obten datos historicos de la Ruta Libertadora.</p>
+        </div>
+      </div>
+      <div class="card" onclick="irActividad('src/pages/advina-personaje/adivina-personaje.html')">
+        <img src="assets/imgs/adivina.png" alt="advina-personaje">
+        <div class="info">
+          <h2>Adivina el Personaje</h2>
+          <p>Teniendo presente las caracteristicas de los personajes descubrelo.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- </marquee> -->
+
+
+  <footer>
+    <marquee behavior="scroll" direction="left" scrollamount ="10">
+      <p>© 2025 Proyecto Educativo - Ruta Libertadora de 1819</p>
+    </marquee>
+  </footer>
+
+  <script src="assets/Js/main.js"></script>
+</body>
+
+</html>

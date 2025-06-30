@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Personaje</title>
+    <link rel="shortcut icon" href="../../../assets/imgs/icon_quiz.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="inicio" style="text-align: center; padding: 50px; animation: fadeIn 2s;">
+        <h1 style="color: white; font-size: 36px; text-shadow: 2px 2px 4px #000;">Adivina el personaje</h1>
+        <div style="margin: 20px auto; max-width: 800px;">
+            <video id="videoExplicativo" width="100%" controls
+                style="border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+                <source src="ruta-del-video.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <button onclick="mostrarInstrucciones()" class=" btn-secundario">¿Cómo jugar?</button>
+        <button onclick="iniciarActividad()" class="btn">Iniciar Actividad</button>
+    </div>
+
+    <div id="instrucciones"
+        style="display: none; color: white; max-width: 800px; margin: 20px auto; font-size: 18px; animation: slideDown 1s;">
+        <h2>Instrucciones</h2>
+        <p>Lee las características de cada personaje y escribe su nombre en el campo correspondiente. Si aciertas, la
+            tarjeta se volteará mostrando la imagen y el nombre del personaje. Si no aciertas, intenta nuevamente.
+            ¡Diviértete aprendiendo!</p>
+    </div>
+
+    <div id="actividad" style="display: none;">
+        <div class="card" data-answer="albert einstein">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Científico</li>
+                        <li>Alemania, 1879</li>
+                        <li>Desarrolló la relatividad</li>
+                        <li>Famosa ecuación</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg"
+                        alt="Albert Einstein">
+                    <h3>Albert Einstein</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="miguel de cervantes">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Escritor</li>
+                        <li>España, 1547</li>
+                        <li>Coetáneo de Shakespeare</li>
+                        <li>Su libro es uno de los más traducidos</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Cervantes_Jauregui.jpg"
+                        alt="Miguel de Cervantes">
+                    <h3>Miguel de Cervantes</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="frida kahlo">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Pintora</li>
+                        <li>México, 1907</li>
+                        <li>Autorretratos</li>
+                        <li>Usa recursos oníricos</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg"
+                        alt="Frida Kahlo">
+                    <h3>Frida Kahlo</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="leonardo da vinci">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Polímata</li>
+                        <li>Italia, 1452</li>
+                        <li>Autor de La Última Cena</li>
+                        <li>Inventor y genio del Renacimiento</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg"
+                        alt="Leonardo da Vinci">
+                    <h3>Leonardo da Vinci</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="marie curie">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Científica</li>
+                        <li>Polonia, 1867</li>
+                        <li>Estudió la radiactividad</li>
+                        <li>Ganó dos Nobel</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Marie_Curie_c1920.jpg"
+                        alt="Marie Curie">
+                    <h3>Marie Curie</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="mozart">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Compositor</li>
+                        <li>Austria, 1756</li>
+                        <li>Genio musical</li>
+                        <li>El niño prodigio</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Wolfgang-amadeus-mozart_1.jpg"
+                        alt="Mozart">
+                    <h3>Mozart</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="mahatma gandhi">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Activista</li>
+                        <li>India, 1869</li>
+                        <li>Líder pacifista</li>
+                        <li>Independencia de India</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Portrait_Gandhi.jpg"
+                        alt="Mahatma Gandhi">
+                    <h3>Mahatma Gandhi</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="maria antonieta">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Revolucionaria</li>
+                        <li>Francia, 1755</li>
+                        <li>Reina de Francia</li>
+                        <li>Decapitada durante la Revolución</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Marie_Antoinette_Adult.jpg"
+                        alt="María Antonieta">
+                    <h3>María Antonieta</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
