@@ -56,11 +56,13 @@ body {
   justify-content: center;
   gap: 1px;
 }
+
 .container h1 {
   font-size: 2rem;
   color: var(--liberator-green);
   margin-bottom: 20px;
 }
+
 .config-toggle {
   margin-bottom: 10px;
   display: flex;
@@ -109,9 +111,11 @@ body {
 .dashboard.active {
   display: flex;
 }
-.datos{
+
+.datos {
   display: flex;
 }
+
 .panel {
   background: var(--control-bg);
   border: 2px solid var(--border-color);
@@ -246,6 +250,126 @@ button:hover {
 .drag-over {
   outline: 2px dashed #ff0000;
 }
+
+/* Fondo de humo */
+#humoFondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../imgs/humo.gif') center center no-repeat;
+  background-size: cover;
+  opacity: 0;
+  z-index: 998;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+/* Mostrar humo */
+#humoFondo.visible {
+  opacity: 0.5;
+  /* o ajusta según el efecto deseado */
+  pointer-events: all;
+}
+
+/* Ajustes en pergamino (ya dados anteriormente) */
+.pergamino {
+  position: fixed;
+  top: 50%;
+  right: -450px;
+  transform: translateY(-50%);
+  width: 400px;
+  z-index: 999;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    right 0.6s ease-in-out,
+    max-height 0.8s ease-in-out,
+    opacity 0.6s ease-in-out;
+}
+
+
+.pergamino img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.pergamino h1,
+.pergamino p {
+  position: absolute;
+  left: 30px;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: bold;
+  max-width: 300px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.pergamino h1 {
+  top: 100px;
+}
+
+.pergamino p {
+  top: 200px;
+}
+
+.pergamino button {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--liberator-red);
+  color: var(--accent-text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Desplegar: animación doble */
+.pergamino.desplegar {
+  right: 20px;
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Replegar: oculto */
+.pergamino.replegar {
+  right: -450px;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Responsivo móvil */
+@media (max-width: 600px) {
+  .pergamino {
+    width: 90vw;
+    right: -100vw;
+  }
+
+  .pergamino.desplegar {
+    right: 5vw;
+  }
+
+  .pergamino h1 {
+    top: 80px;
+    font-size: 14px;
+  }
+
+  .pergamino p {
+    top: 160px;
+    font-size: 14px;
+  }
+}
+
 
 @media (max-width: 600px),
 (orientation: portrait) {
