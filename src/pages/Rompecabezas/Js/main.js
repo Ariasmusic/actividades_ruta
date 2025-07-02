@@ -4,10 +4,20 @@ let timer = 0;
 let timerInterval = null;
 let moves = 0;
 
-// Sonidos locales
+// Obtener referencias a los elementos del pergamino y mensaje
+const pergamino = document.getElementById("pergamino");
+const mensaje = document.getElementById("mensaje");
+const descripcion = document.getElementById("descripcion");
+
+// Ocultar al inicio (solo con clases, no con display)
+pergamino.classList.add("replegar");
+mensaje.style.display = "none";
+
+// Sonidos
 const moveAudio = new Audio("move.mp3");
 const winAudio = new Audio("win.mp3");
 
+// Cargar imagen personalizada
 const customImageInput = document.getElementById("customImage");
 if (customImageInput) {
   customImageInput.addEventListener("change", function (event) {
@@ -115,12 +125,43 @@ function swapPieces(a, b) {
 function checkVictory() {
   const pieces = puzzle.querySelectorAll(".piece");
   const isCorrect = Array.from(pieces).every(p => p.dataset.correct === p.dataset.current);
+
   if (isCorrect) {
     clearInterval(timerInterval);
     if (winAudio) winAudio.play();
-    setTimeout(() => alert(`¡Felicidades! Has completado el rompecabezas en ${timer} segundos y ${moves} movimientos.`), 200);
+
+    // Mostrar mensaje
+    mensaje.textContent = `¡Felicidades! Has completado el rompecabezas en ${timer} segundos y ${moves} movimientos.`;
+    descripcion.textContent = "¡Excelente trabajo! Tu paciencia y habilidad han dado sus frutos. Ahora puedes disfrutar de la imagen completa.";
+    mensaje.style.display = "block";
+
+    // Mostrar pergamino animado
+    mostrarPergamino();
+
+    // Asociar el botón de cierre (asegúrate de tenerlo en el HTML)
+    const btn_cerrar = pergamino.querySelector("button");
+    btn_cerrar.addEventListener("click", closeMessage);
   }
 }
+function closeMessage() {
+  ocultarPergamino();
+}
+
+const humo = document.getElementById("humoFondo");
+
+function mostrarPergamino() {
+  pergamino.classList.remove("replegar");
+  pergamino.classList.add("desplegar");
+  humo.classList.add("visible");
+}
+
+function ocultarPergamino() {
+  pergamino.classList.remove("desplegar");
+  pergamino.classList.add("replegar");
+  humo.classList.remove("visible");
+}
+
+
 
 function toggleTheme() {
   document.body.classList.toggle("dark-mode");
@@ -130,6 +171,7 @@ function toggleTheme() {
 
   button.textContent = isDark ? "🌞 Modo claro" : "🌙 Modo oscuro";
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('toggleConfig');
   const dashboard = document.querySelector('.dashboard');
@@ -144,4 +186,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 generatePuzzle();
-
