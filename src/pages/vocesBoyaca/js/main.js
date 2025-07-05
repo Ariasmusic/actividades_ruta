@@ -35,7 +35,7 @@ const personajes = [
     {
         nombre: "Julián Garzón",
         miniatura: "imgs/julian_Circular.png",
-        imagen: "imgs/julian garzon.png",
+        imagen: "../imgs/julian garzon.png",
         audio: "audios/audio4.mp3",
         narracion: "Nadie sospechaba de mí. Fui con pan, vino y dulces al campamento realista...",
         pregunta: "¿Por qué arriesgó su vida como espía?"
