@@ -4,12 +4,12 @@ let timer = 0;
 let timerInterval = null;
 let moves = 0;
 
-// Obtener referencias a los elementos del pergamino y mensaje
+// Referencias al pergamino y mensaje
 const pergamino = document.getElementById("pergamino");
 const mensaje = document.getElementById("mensaje");
 const descripcion = document.getElementById("descripcion");
 
-// Ocultar al inicio (solo con clases, no con display)
+// Ocultar inicialmente
 pergamino.classList.add("replegar");
 mensaje.style.display = "none";
 
@@ -17,7 +17,7 @@ mensaje.style.display = "none";
 const moveAudio = new Audio("move.mp3");
 const winAudio = new Audio("win.mp3");
 
-// Cargar imagen personalizada
+// Imagen personalizada
 const customImageInput = document.getElementById("customImage");
 if (customImageInput) {
   customImageInput.addEventListener("change", function (event) {
@@ -70,10 +70,18 @@ function generatePuzzle() {
   pieces.sort(() => Math.random() - 0.5);
   pieces.forEach((p, i) => {
     p.dataset.current = `${Math.floor(i / cols)}-${i % cols}`;
+
+    // Eventos PC
     p.addEventListener("dragstart", handleDragStart);
     p.addEventListener("dragover", handleDragOver);
     p.addEventListener("dragleave", handleDragLeave);
     p.addEventListener("drop", handleDrop);
+
+    // Eventos móviles
+    p.addEventListener("touchstart", handleTouchStart, { passive: false });
+    p.addEventListener("touchmove", handleTouchMove, { passive: false });
+    p.addEventListener("touchend", handleTouchEnd, { passive: false });
+
     puzzle.appendChild(p);
   });
 }
@@ -82,6 +90,7 @@ function restartPuzzle() {
   generatePuzzle();
 }
 
+// Drag y Drop
 let dragged = null;
 
 function handleDragStart(e) {
@@ -105,6 +114,7 @@ function handleDrop(e) {
   }
 }
 
+// Intercambio
 function swapPieces(a, b) {
   const temp = document.createElement("div");
   puzzle.replaceChild(temp, a);
@@ -122,6 +132,7 @@ function swapPieces(a, b) {
   checkVictory();
 }
 
+// Verificar victoria
 function checkVictory() {
   const pieces = puzzle.querySelectorAll(".piece");
   const isCorrect = Array.from(pieces).every(p => p.dataset.correct === p.dataset.current);
@@ -130,19 +141,16 @@ function checkVictory() {
     clearInterval(timerInterval);
     if (winAudio) winAudio.play();
 
-    // Mostrar mensaje
     mensaje.textContent = `¡Felicidades! Has completado el rompecabezas en ${timer} segundos y ${moves} movimientos.`;
     descripcion.textContent = "¡Excelente trabajo! Tu paciencia y habilidad han dado sus frutos. Ahora puedes disfrutar de la imagen completa.";
     mensaje.style.display = "block";
 
-    // Mostrar pergamino animado
     mostrarPergamino();
-
-    // Asociar el botón de cierre (asegúrate de tenerlo en el HTML)
     const btn_cerrar = pergamino.querySelector("button");
     btn_cerrar.addEventListener("click", closeMessage);
   }
 }
+
 function closeMessage() {
   ocultarPergamino();
 }
@@ -161,17 +169,15 @@ function ocultarPergamino() {
   humo.classList.remove("visible");
 }
 
-
-
+// Tema oscuro/claro
 function toggleTheme() {
   document.body.classList.toggle("dark-mode");
-
   const button = document.getElementById("themeToggle");
   const isDark = document.body.classList.contains("dark-mode");
-
   button.textContent = isDark ? "🌞 Modo claro" : "🌙 Modo oscuro";
 }
 
+// Mostrar/Ocultar Configuración
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('toggleConfig');
   const dashboard = document.querySelector('.dashboard');
@@ -185,4 +191,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// 📱 Soporte táctil visual (arrastre)
+let touchStartPiece = null;
+let ghostPiece = null;
+
+function handleTouchStart(e) {
+  const touch = e.touches[0];
+  touchStartPiece = e.target;
+
+  ghostPiece = touchStartPiece.cloneNode(true);
+  ghostPiece.style.position = "fixed";
+  ghostPiece.style.pointerEvents = "none";
+  ghostPiece.style.zIndex = "1000";
+  ghostPiece.style.opacity = "0.7";
+  ghostPiece.style.width = `${touchStartPiece.offsetWidth}px`;
+  ghostPiece.style.height = `${touchStartPiece.offsetHeight}px`;
+  document.body.appendChild(ghostPiece);
+
+  moveGhost(touch.clientX, touch.clientY);
+  e.preventDefault();
+}
+
+function handleTouchMove(e) {
+  const touch = e.touches[0];
+  moveGhost(touch.clientX, touch.clientY);
+  e.preventDefault();
+}
+
+function handleTouchEnd(e) {
+  const touch = e.changedTouches[0];
+  const target = document.elementFromPoint(touch.clientX, touch.clientY);
+
+  if (target && target.classList.contains("piece") && target !== touchStartPiece) {
+    swapPieces(touchStartPiece, target);
+  }
+
+  if (ghostPiece) {
+    ghostPiece.remove();
+    ghostPiece = null;
+  }
+  touchStartPiece = null;
+}
+
+function moveGhost(x, y) {
+  if (ghostPiece) {
+    ghostPiece.style.left = `${x - ghostPiece.offsetWidth / 2}px`;
+    ghostPiece.style.top = `${y - ghostPiece.offsetHeight / 2}px`;
+  }
+}
+
+// Iniciar el rompecabezas al cargar
 generatePuzzle();
