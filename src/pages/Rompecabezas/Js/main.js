@@ -161,37 +161,37 @@ function checkVictory() {
 
       case "imgs/Campesinoboyacense.jpg":
         mensajeTexto = "¡El Campesino boyacense!";
-        descripcionTexto = "Acuarela de un campesino con sombrero, ruana y alpargatas. <strong>Importancia:</strong> Representa al pueblo boyacense, fundamental en el apoyo logístico, con víveres, ropas y animales para el ejército libertador.";
+        descripcionTexto = "Acuarela de un campesino con sombrero, ruana y alpargatas. Importancia: Representa al pueblo boyacense, fundamental en el apoyo logístico, con víveres, ropas y animales para el ejército libertador.";
         break;
 
       case "imgs/Celebracionespopulares.jpg":
         mensajeTexto = "¡Celebraciones populares!";
-        descripcionTexto = "Acuarela de mujeres y músicos en una fiesta nocturna con instrumentos y trajes típicos. <strong>Importancia:</strong> Expresa el sentir del pueblo tras la victoria: la independencia fue también celebrada en las calles por los sectores populares.";
+        descripcionTexto = "Acuarela de mujeres y músicos en una fiesta nocturna con instrumentos y trajes típicos. Importancia: Expresa el sentir del pueblo tras la victoria: la independencia fue también celebrada en las calles por los sectores populares.";
         break;
 
       case "imgs/ElcampodelríoBoyacá.jpg":
         mensajeTexto = "¡El campo del río Boyacá!";
-        descripcionTexto = "Representación artística del paisaje natural donde tuvo lugar la batalla, con colinas y un emblemático puente al fondo. <strong>Importancia:</strong> Es el escenario real donde se enfrentaron patriotas y realistas. Este entorno fue clave para la estrategia militar de Bolívar..";
+        descripcionTexto = "Representación artística del paisaje natural donde tuvo lugar la batalla, con colinas y un emblemático puente al fondo. Importancia: Es el escenario real donde se enfrentaron patriotas y realistas. Este entorno fue clave para la estrategia militar de Bolívar..";
         break;
       case "imgs/Laimportanciadelavictoria.jpg":
         mensajeTexto = "¡La importancia de la victoria!";
-        descripcionTexto = "Imagen de Bolívar entrando triunfante a Santafé junto a su séquito y recibiendo el saludo del pueblo. <strong>Importancia:</strong> Simboliza la consolidación de la victoria: con la entrada de Bolívar a la capital el 10 de agosto, se aseguró el control patriota del centro político del virreinato";
+        descripcionTexto = "Imagen de Bolívar entrando triunfante a Santafé junto a su séquito y recibiendo el saludo del pueblo. Importancia: Simboliza la consolidación de la victoria: con la entrada de Bolívar a la capital el 10 de agosto, se aseguró el control patriota del centro político del virreinato";
         break;
       case "imgs/Lossoldadosdelaindependencia.jpg":
         mensajeTexto = "¡Los soldados de la independencia!";
-        descripcionTexto = "Acuarela de dos soldados patriotas, uno ayudando al otro a caminar. <strong>Importancia:</strong> Representa el sacrificio de los combatientes, muchos de ellos voluntarios que marcharon largas distancias en condiciones difíciles.";
+        descripcionTexto = "Acuarela de dos soldados patriotas, uno ayudando al otro a caminar. Importancia: Representa el sacrificio de los combatientes, muchos de ellos voluntarios que marcharon largas distancias en condiciones difíciles.";
         break;
       case "imgs/Tunjacunaytallerdelalibertad.jpg":
         mensajeTexto = "¡Tunja: cuna y taller de la libertad!";
-        descripcionTexto = "Pintura colonial de la ciudad de Tunja y su plaza principal. <strong>Importancia:</strong>  Tunja fue un punto clave para el reabastecimiento, organización y apoyo civil al ejército patriota en los días previos a la batalla.";
+        descripcionTexto = "Pintura colonial de la ciudad de Tunja y su plaza principal. Importancia:  Tunja fue un punto clave para el reabastecimiento, organización y apoyo civil al ejército patriota en los días previos a la batalla.";
         break;
       case "imgs/SimónBolívar.jpg":
         mensajeTexto = "¡Simón Bolívar!";
-        descripcionTexto = "Óleo de época que muestra a Bolívar con traje militar y gesto de liderazgo. <strong>Importancia:</strong>  Figura central de la campaña, Bolívar lideró la estrategia que condujo a la victoria en Boyacá y consolidó el proyecto independentista.";
+        descripcionTexto = "Óleo de época que muestra a Bolívar con traje militar y gesto de liderazgo. Importancia:  Figura central de la campaña, Bolívar lideró la estrategia que condujo a la victoria en Boyacá y consolidó el proyecto independentista.";
         break;
       case "imgs/Combateenelpuente.jpg":
         mensajeTexto = "¡Combate en el puente!";
-        descripcionTexto = "Pintura que muestra el choque armado entre patriotas y realistas sobre el Puente de Boyacá. <strong>Importancia:</strong> Esta escena representa el punto álgido de la batalla, donde las tropas patriotas desorganizaron al enemigo y aseguraron la victoria final.";
+        descripcionTexto = "Pintura que muestra el choque armado entre patriotas y realistas sobre el Puente de Boyacá. Importancia: Esta escena representa el punto álgido de la batalla, donde las tropas patriotas desorganizaron al enemigo y aseguraron la victoria final.";
         break;
 
       default:
