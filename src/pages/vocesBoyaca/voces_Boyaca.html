@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voces del Campo de Boyacá</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="pantalla-inicial">
+        <div class="contenido-inicial">
+            <h1>Voces del Campo de Boyacá</h1>
+            <p class="subtitulo">Descubre las voces olvidadas de la historia</p>
+            <button onclick="iniciar()" class="boton-inicio">Iniciar</button>
+        </div>
+        <button onclick="mostrarInstrucciones()" class="boton-instrucciones">¿Cómo se juega?</button>
+
+        <div id="modal-instrucciones" class="modal-oscuro oculto">
+            <div class="instrucciones-box">
+                <h3>Instrucciones</h3>
+                <p>Haz clic en un personaje para escuchar su historia y conocer su aporte a la libertad de Colombia.</p>
+                <p>Luego, responde la pregunta que se te plantea.</p>
+                <button onclick="cerrarInstrucciones()">Cerrar</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div id="seleccion-personaje" class="oculto">
+        <h2>Escoge un personaje</h2>
+        <div class="pantalla-personajes">
+            <div class="columna izquierda">
+                <div class="personaje" data-index="0">
+                    <img src="imgs/Juana_Circular.png" alt="Juana Velasco">
+                </div>
+                <div class="personaje" data-index="1">
+                    <img src="imgs/Pedro_Circular.png" alt="Pedro Pascasio">
+                </div>
+                <div class="personaje" data-index="2">
+                    <img src="imgs/Estefania-Circular.png" alt="Estefanía Parra">
+                </div>
+            </div>
+
+            <div class="centro" id="centro"></div>
+
+            <div class="columna derecha">
+                <div class="personaje" data-index="3">
+                    <img src="imgs/SimonBolivar_Circular.png" alt="Simón Bolívar">
+                </div>
+                <div class="personaje" data-index="4">
+                    <img src="imgs/julian_Circular.png" alt="Julián Garzón">
+                </div>
+                <div class="personaje" data-index="5">
+                    <img src="imgs/Soldado_circular.png" alt="Soldado Anónimo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
