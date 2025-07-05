@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria - Ruta Libertadora</title>
+    <link rel="shortcut icon" href="../../../assets/imgs/icon_memoria.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <marquee behavior="scroll" direction="right">
+            Juego de Memoria: Ruta Libertadora de 1819
+        </marquee>
+    </header>
+    <div class="botones">
+        <button onclick="abrirModal()">¿Cómo Jugar?</button>
+        <button onclick="reiniciarJuego()">Reiniciar</button>
+    </div>
+
+    <!-- Modal de Instrucciones -->
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h3>Instrucciones del juego</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><span style="font-size: 1.5em; margin-right: 10px;">🃏</span>Haz clic en una carta para voltearla.
+                </li>
+                <li><span style="font-size: 1.5em; margin-right: 10px;">🔍</span>Luego, haz clic en otra carta para
+                    intentar encontrar la pareja.</li>
+                <li><span style="font-size: 1.5em; margin-right: 10px;">✅</span>Si ambas cartas tienen el mismo lugar
+                    histórico, permanecerán descubiertas.</li>
+                <li><span style="font-size: 1.5em; margin-right: 10px;">🔄</span>Si no coinciden, se voltearán
+                    nuevamente.</li>
+                <li><span style="font-size: 1.5em; margin-right: 10px;">🎯</span>El objetivo es emparejar todas las
+                    cartas y completar la Ruta Libertadora.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sonidos -->
+    <audio id="sonido-acierto" src="audios/acierto.mp3" preload="auto"></audio>
+    <audio id="sonido-error" src="audios/error.mp3" preload="auto"></audio>
+    <audio id="sonido-victoria" src="audios/victoria.mp3" preload="auto"></audio>
+    <main class="contenedor">
+        <img src="imgs/personaje.gif" width="260" alt="personaje" style="filter: drop-shadow(0 0 10px #ffffff);">
+
+        <div class="tablero" id="tablero"></div>
+        <img src="imgs/personaje2.gif" width="250" alt="personaje" style="filter: drop-shadow(0 0 10px #ffffff);">
+    </main>
+    <div id="humoFondo"></div>
+    <div class="pergamino replegar" id="pergamino">
+        <img src="../../../assets/imgs/pergamino.png" alt="pergamino">
+        <h1 id="mensaje"></h1>
+        <img src="imgs/celebracion.gif" alt="celebracion" class="celebracion">
+        <button type="button">X</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Personaje</title>
+    <link rel="shortcut icon" href="../../../assets/imgs/icon_quiz.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="inicio" style="text-align: center; padding: 50px; animation: fadeIn 2s;">
+        <h1 style="color: white; font-size: 36px; text-shadow: 2px 2px 4px #000;">Adivina el personaje</h1>
+        <div style="margin: 20px auto; max-width: 800px;">
+            <video id="videoExplicativo" width="100%" controls
+                style="border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+                <source src="ruta-del-video.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <button onclick="mostrarInstrucciones()" class=" btn-secundario">¿Cómo jugar?</button>
+        <button onclick="iniciarActividad()" class="btn">Iniciar Actividad</button>
+    </div>
+
+    <div id="instrucciones"
+        style="display: none; color: white; max-width: 800px; margin: 20px auto; font-size: 18px; animation: slideDown 1s;">
+        <h2>Instrucciones</h2>
+        <p>Lee las características de cada personaje y escribe su nombre en el campo correspondiente. Si aciertas, la
+            tarjeta se volteará mostrando la imagen y el nombre del personaje. Si no aciertas, intenta nuevamente.
+            ¡Diviértete aprendiendo!</p>
+    </div>
+
+    <div id="actividad" style="display: none;">
+        <div class="card" data-answer="Pedro Pascasio Martínez">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Era un joven boyacense, apenas un niño.</li>
+                        <li>Participó como ayudante del ejército patriota.</li>
+                        <li>Fue quien capturó al general Barreiro.</li>
+                        <li>Rechazó un soborno para dejarlo escapar.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Pedro_Pascasio_Martinez.jpg"
+                        alt="Pedro Pascasio Martínez">
+                    <h3>Pedro Pascasio Martinez</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="Simón Bolívar">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Líder supremo del ejército libertador.</li>
+                        <li>Planeó la estrategia para enfrentar a los realistas.</li>
+                        <li>Entró a Santafé tras la victoria en Boyacá.</li>
+                        <li>Es conocido como “El Libertador”.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Sim%C3%B3n_Bol%C3%ADvar_%28cropped%29.jpg"
+                        alt="Simón Bolívar">
+                    <h3>Simón Bolívar</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="José María Barreiro">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Comandante del ejército realista en Boyacá.</li>
+                        <li>Cayó prisionero tras la derrota.</li>
+                        <li>Había confiado en que Bolívar no saldría de Tunja.</li>
+                        <li>Fue engañado por un espía patriota.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Jos%C3%A9_Mar%C3%ADa_Barreiro.jpg"
+                        alt="José María Barreiro">
+                    <h3>José María Barreiro</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="Juana Velasco de Gallo">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Mujer patriota de Tunja.</li>
+                        <li>Reunió a otras mujeres para confeccionar ropa.</li>
+                        <li>Apoyó con víveres y cobijas a los soldados.</li>
+                        <li>Es símbolo del papel civil en la campaña.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img src="" alt="Juana Velasco de Gallo">
+                    <h3>Juana Velasco de Gallo</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="Francisco de Paula Santander">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Comandante de la vanguardia patriota.</li>
+                        <li>Tuvo un papel decisivo en el inicio del ataque.</li>
+                        <li>Luchó junto a Bolívar en la campaña de 1819.</li>
+                        <li>Más tarde sería presidente de Colombia.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img src="" alt="Francisco de Paula Santander">
+                    <h3>Francisco de Paula Santander</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="Julián Garzón">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Se infiltró en el campamento realista.</li>
+                        <li>Amigo del coronel Loño, usó esto como ventaja.</li>
+                        <li>Llevó dulces, tabaco y vino como obsequio.</li>
+                        <li>Informó a Bolívar que Barreiro planeaba ir a Santafé.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img src="" alt="Julián Garzón">
+                    <h3>Julián Garzón</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="José Antonio Anzoátegui">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>General patriota de origen venezolano.</li>
+                        <li>Comandó parte del ejército en Boyacá.</li>
+                        <li>Elogió la ayuda de las mujeres de Tunja.</li>
+                        <li>Su liderazgo fue clave en la moral del ejército.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Jose_Antonio_Anzoategui.jpg"
+                        alt="José Antonio Anzoátegui">
+                    <h3>José Antonio Anzoátegui</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-answer="Estefanía Parra">
+            <div class="card-inner">
+                <div class="card-front">
+                    <ul>
+                        <li>Niña campesina que vivía cerca del puente de Boyacá.</li>
+                        <li>Ayudó a los soldados patriotas escondiendo armas y suministros.</li>
+                        <li>Su valentía fue reconocida por oficiales libertadores.</li>
+                        <li>Representa el papel anónimo de muchas mujeres del pueblo en la campaña.</li>
+                    </ul><input type="text" placeholder="¿Quién es?"><button>Enviar</button>
+                </div>
+                <div class="card-back"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Estefania_Parra.jpg"
+                        alt="Estefanía Parra">
+                    <h3>Estefanía Parra</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
