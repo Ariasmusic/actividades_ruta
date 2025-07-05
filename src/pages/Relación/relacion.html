@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego Ruta Libertadora</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="../../../assets/imgs/icon_relacion.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Juego de Relación: Ruta Libertadora</h1>
+
+    <button onclick="toggleInstrucciones()">Mostrar instrucciones</button>
+
+    <div id="instrucciones" class="instrucciones oculto">
+        Arrastra la descripción histórica hacia el recuadro que corresponde con la imagen de la Ruta Libertadora.
+        ¡Haz coincidir todos correctamente para ganar!
+    </div>
+
+    <!-- Tarjetas de texto sueltas -->
+    <div class="banco-textos">
+        <div class="caja-texto" draggable="true" data-texto="Celebraciones en Santafé (entrada triunfal)">
+            El 10 de agosto, Bolívar entró a Santafé. La victoria en Boyacá fue decisiva para consolidar la
+            independencia.
+        </div>
+        <div class="caja-texto" draggable="true" data-texto="Simón Bolívar montado a caballo">
+            Comandante de la campaña libertadora, diseñó la estrategia que permitió el triunfo patriota en Boyacá.
+        </div>
+        <div class="caja-texto" draggable="true" data-texto="Juana Velasco y mujeres patriotas cosiendo">
+            Lideraron la confección de más de 2.000 camisas para las tropas libertadoras en Tunja, apoyando con fervor
+            la causa patriota.
+        </div>
+    </div>
+
+    <div class="contenedor-juego">
+        <!-- Fila 1 -->
+        <div class="fila">
+            <div class="caja-imagen" data-respuesta="El Puente de Boyacá (pintura del combate)">
+                <img src="imgs/" alt="El Puente de Boyacá (pintura del combate)">
+            </div>
+            <div class="zona-drop" data-imagen="El Puente de Boyacá (pintura del combate)"></div>
+        </div>
+
+        <!-- Fila 2 -->
+        <div class="fila">
+            <div class="caja-imagen" data-respuesta="Mapa con rutas patriota y realista">
+                <img src="imgs/" alt="Mapa con rutas patriota y realista">
+            </div>
+            <div class="zona-drop" data-imagen="Mapa con rutas patriota y realista"></div>
+        </div>
+
+        <!-- Fila 3 -->
+        <div class="fila">
+            <div class="caja-imagen" data-respuesta="Pedro Pascasio con Barreiro prisionero">
+                <img src="imgs/" alt="Pedro Pascasio con Barreiro prisionero">
+            </div>
+            <div class="zona-drop" data-imagen="Pedro Pascasio con Barreiro prisionero"></div>
+        </div>
+        <!-- Fila 4-->
+        <div class="fila">
+            <div class="caja-imagen" data-respuesta="Celebraciones en Santafé (entrada triunfal)">
+                <img src="imgs/" alt="Celebraciones en Santafé (entrada triunfal)">
+            </div>
+            <div class="zona-drop" data-imagen="Celebraciones en Santafé (entrada triunfal)"></div>
+        </div>
+        <!-- Fila 5 -->
+        <div class="fila">
+            <div class="caja-imagen" data-respuesta="Simón Bolívar montado a caballo">
+                <img src="imgs/" alt="Simón Bolívar montado a caballo">
+            </div>
+            <div class="zona-drop" data-imagen="Simón Bolívar montado a caballo"></div>
+        </div>
+        <!-- Fila 6 -->
+        <div class="fila">
+            <div class="caja-imagen" data-respuesta="Juana Velasco y mujeres patriotas cosiendo">
+                <img src="imgs/" alt="Juana Velasco y mujeres patriotas cosiendo">
+            </div>
+            <div class="zona-drop" data-imagen="Juana Velasco y mujeres patriotas cosiendo"></div>
+        </div>
+    </div>
+
+    <!-- Tarjetas de texto sueltas -->
+    <div class="banco-textos">
+        <div class="caja-texto" draggable="true" data-texto="Mapa con rutas patriota y realista">
+            Ambos ejércitos tomaron caminos distintos desde Tunja hacia el puente de Boyacá, buscando ventajas
+            estratégicas.
+        </div>
+        <div class="caja-texto" draggable="true" data-texto="Pedro Pascasio con Barreiro prisionero">
+            El joven llanero que capturó al general Barreiro al finalizar la batalla, impidiendo su fuga.
+        </div>
+        <div class="caja-texto" draggable="true" data-texto="El Puente de Boyacá (pintura del combate)">
+            Escenario clave donde se desarrolló el enfrentamiento decisivo entre los ejércitos patriota y realista el 7
+            de agosto de 1819.
+        </div>
+    </div>
+    <div id="humoFondo"></div>
+    <div class="pergamino replegar" id="pergamino">
+        <img src="../../../assets/imgs/pergamino.png" alt="pergamino">
+        <h1 id="mensaje"></h1>
+        <img src="imgs/celebracion.gif" alt="celebracion" class="celebracion">
+        <button type="button">X</button>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
