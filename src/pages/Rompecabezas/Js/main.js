@@ -141,15 +141,75 @@ function checkVictory() {
     clearInterval(timerInterval);
     if (winAudio) winAudio.play();
 
-    mensaje.textContent = `¡Felicidades! Has completado el rompecabezas en ${timer} segundos y ${moves} movimientos.`;
-    descripcion.textContent = "¡Excelente trabajo! Tu paciencia y habilidad han dado sus frutos. Ahora puedes disfrutar de la imagen completa.";
+    const imageSelect = document.getElementById("imageSelect");
+    const selectedImage = imageSelect.value;
+
+    // Mensajes y descripciones personalizados
+    let mensajeTexto = "¡Felicidades!";
+    let descripcionTexto = "";
+
+    switch (selectedImage) {
+      case "imgs/Pedropascasio.jpg":
+        mensajeTexto = "¡El niño Pedro Pascasio y la captura de Barreiro!";
+        descripcionTexto = "Ilustración donde un joven campesino observa oculto tras una roca mientras dos soldados interactúan, representando la escena de la captura. Importancia: Pedro Pascasio, con apenas 12 años, capturó al general Barreiro tras la batalla, simbolizando el papel de los niños y campesinos en la lucha libertadora.";
+        break;
+
+      case "imgs/LaBatalladeBoyacá.jpg":
+        mensajeTexto = "¡La Batalla de Boyacá!";
+        descripcionTexto = "Pintura panorámica que muestra el campo de batalla, con el enfrentamiento entre patriotas y realistas en pleno desarrollo. Importancia: Esta escena resume visualmente la intensidad del combate del 7 de agosto de 1819, día decisivo para la independencia de la Nueva Granada.";
+        break;
+
+      case "imgs/Campesinoboyacense.jpg":
+        mensajeTexto = "¡El Campesino boyacense!";
+        descripcionTexto = "Acuarela de un campesino con sombrero, ruana y alpargatas. <strong>Importancia:</strong> Representa al pueblo boyacense, fundamental en el apoyo logístico, con víveres, ropas y animales para el ejército libertador.";
+        break;
+
+      case "imgs/Celebracionespopulares.jpg":
+        mensajeTexto = "¡Celebraciones populares!";
+        descripcionTexto = "Acuarela de mujeres y músicos en una fiesta nocturna con instrumentos y trajes típicos. <strong>Importancia:</strong> Expresa el sentir del pueblo tras la victoria: la independencia fue también celebrada en las calles por los sectores populares.";
+        break;
+
+      case "imgs/ElcampodelríoBoyacá.jpg":
+        mensajeTexto = "¡El campo del río Boyacá!";
+        descripcionTexto = "Representación artística del paisaje natural donde tuvo lugar la batalla, con colinas y un emblemático puente al fondo. <strong>Importancia:</strong> Es el escenario real donde se enfrentaron patriotas y realistas. Este entorno fue clave para la estrategia militar de Bolívar..";
+        break;
+      case "imgs/Laimportanciadelavictoria.jpg":
+        mensajeTexto = "¡La importancia de la victoria!";
+        descripcionTexto = "Imagen de Bolívar entrando triunfante a Santafé junto a su séquito y recibiendo el saludo del pueblo. <strong>Importancia:</strong> Simboliza la consolidación de la victoria: con la entrada de Bolívar a la capital el 10 de agosto, se aseguró el control patriota del centro político del virreinato";
+        break;
+      case "imgs/Lossoldadosdelaindependencia.jpg":
+        mensajeTexto = "¡Los soldados de la independencia!";
+        descripcionTexto = "Acuarela de dos soldados patriotas, uno ayudando al otro a caminar. <strong>Importancia:</strong> Representa el sacrificio de los combatientes, muchos de ellos voluntarios que marcharon largas distancias en condiciones difíciles.";
+        break;
+      case "imgs/Tunjacunaytallerdelalibertad.jpg":
+        mensajeTexto = "¡Tunja: cuna y taller de la libertad!";
+        descripcionTexto = "Pintura colonial de la ciudad de Tunja y su plaza principal. <strong>Importancia:</strong>  Tunja fue un punto clave para el reabastecimiento, organización y apoyo civil al ejército patriota en los días previos a la batalla.";
+        break;
+      case "imgs/SimónBolívar.jpg":
+        mensajeTexto = "¡Simón Bolívar!";
+        descripcionTexto = "Óleo de época que muestra a Bolívar con traje militar y gesto de liderazgo. <strong>Importancia:</strong>  Figura central de la campaña, Bolívar lideró la estrategia que condujo a la victoria en Boyacá y consolidó el proyecto independentista.";
+        break;
+      case "imgs/Combateenelpuente.jpg":
+        mensajeTexto = "¡Combate en el puente!";
+        descripcionTexto = "Pintura que muestra el choque armado entre patriotas y realistas sobre el Puente de Boyacá. <strong>Importancia:</strong> Esta escena representa el punto álgido de la batalla, donde las tropas patriotas desorganizaron al enemigo y aseguraron la victoria final.";
+        break;
+
+      default:
+        descripcionTexto = "¡Excelente trabajo! Tu paciencia y habilidad han dado sus frutos. Ahora puedes disfrutar de la imagen completa.";
+        break;
+    }
+
+    mensaje.textContent = mensajeTexto;
+    descripcion.textContent = descripcionTexto;
     mensaje.style.display = "block";
 
     mostrarPergamino();
+
     const btn_cerrar = pergamino.querySelector("button");
     btn_cerrar.addEventListener("click", closeMessage);
   }
 }
+
 
 function closeMessage() {
   ocultarPergamino();
