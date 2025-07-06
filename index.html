@@ -10,6 +10,21 @@
 </head>
 
 <body>
+
+  <div id="loader" class="loader-container">
+    <div class="loader-content">
+      <!-- SVG silueta histórica -->
+      <div class="silhouette">
+
+        <img src="assets/imgs/carga.png" alt="Silueta Ejército Libertador">
+      </div>
+      <div class="mensaje-loader">
+        Recorriendo los caminos de la Ruta Libertadora 1819 ...<span class="dots"></span>
+      </div>
+    </div>
+  </div>
+
+
   <header>
     <div class="header-glow"></div>
     <div class="header-content">
@@ -78,6 +93,13 @@
       <p>© 2025 Proyecto Educativo - Ruta Libertadora de 1819</p>
     </marquee>
   </footer>
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+      }, 3500);
+    });
+  </script>
 
   <script src="assets/Js/main.js"></script>
 </body>
