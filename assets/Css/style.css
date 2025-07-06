@@ -1,5 +1,5 @@
 :root {
-  --acento: #f7c948; /* Dorado brillante */
+  --acento: #f7c948; /* Dorado */
   --fondo-oscuro: #0f0f0f;
   --fondo-card: #1a1a1a;
   --gris-suave: #cccccc;
@@ -30,34 +30,11 @@ body {
   overflow-x: hidden;
 }
 
-header {
-  background: linear-gradient(to right, #111111, #1a1a1a);
-  padding: 40px 20px 30px;
-  text-align: center;
-  border-bottom: 3px solid var(--acento);
-  box-shadow: 0 4px 15px rgba(247, 201, 72, 0.2);
-  position: relative;
+/* Pantalla de carga */
+body.loading {
+  overflow: hidden;
+  height: 100vh;
 }
-
-header figure img {
-  width: 160px;
-  margin-bottom: 15px;
-}
-
-header h1 {
-  font-size: 2.8rem;
-  color: var(--acento);
-  text-shadow: 2px 2px 6px #000;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: var(--gris-suave);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-/* Loader personalizado */
 
 .loader-container {
   position: fixed;
@@ -69,11 +46,49 @@ header p {
   justify-content: center;
   animation: fadeOut 1s ease-out 3.5s forwards;
   flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
 }
 
 .loader-content {
   text-align: center;
   animation: aparecer 1s ease-out;
+  max-width: 90%;
+  max-height: 100%;
+}
+
+.silhouette img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  filter: brightness(1.2) drop-shadow(0 0 15px var(--acento));
+  margin-bottom: 30px;
+}
+
+.mensaje-loader {
+  font-family: var(--futurista);
+  font-size: 1.4rem;
+  color: var(--acento);
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-align: center;
+  word-break: break-word;
+}
+
+.dots::after {
+  content: '';
+  display: inline-block;
+  animation: typing 1.5s infinite steps(3);
+  width: 1ch;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+@keyframes typing {
+  0% { content: ''; }
+  33% { content: '.'; }
+  66% { content: '..'; }
+  100% { content: '...'; }
 }
 
 @keyframes fadeOut {
@@ -94,37 +109,43 @@ header p {
   }
 }
 
-.silhouette img {
-  max-width: 250px;
-  filter: brightness(1.2) drop-shadow(0 0 15px var(--acento));
-  margin-bottom: 30px;
+/* Header con animación de fondo */
+header {
+  background: linear-gradient(270deg, #111111, #1a1a1a, #111111);
+  background-size: 600% 600%;
+  animation: moverFondo 15s ease infinite;
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-bottom: 3px solid var(--acento);
+  box-shadow: 0 4px 15px rgba(247, 201, 72, 0.2);
+  position: relative;
 }
 
-.mensaje-loader {
-  font-family: var(--futurista);
-  font-size: 1.4rem;
+@keyframes moverFondo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header figure img {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 2.8rem;
   color: var(--acento);
-  letter-spacing: 1px;
+  text-shadow: 2px 2px 6px #000;
+  margin-bottom: 10px;
 }
 
-.dots::after {
-  content: '';
-  display: inline-block;
-  animation: typing 1.5s infinite steps(3);
-  width: 1ch;
-  overflow: hidden;
-  vertical-align: bottom;
-}
-
-@keyframes typing {
-  0% { content: ''; }
-  33% { content: '.'; }
-  66% { content: '..'; }
-  100% { content: '...'; }
+header p {
+  font-size: 1.2rem;
+  color: var(--gris-suave);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Cards */
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -201,7 +222,6 @@ header p {
 }
 
 /* Footer */
-
 footer {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -228,7 +248,7 @@ footer {
   }
 }
 
-/* Adaptabilidad */
+/* Responsive */
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column;
@@ -245,5 +265,9 @@ footer {
 
   header figure img {
     width: 100px;
+  }
+
+  .mensaje-loader {
+    font-size: 1.1rem;
   }
 }
