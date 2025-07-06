@@ -189,13 +189,13 @@ header figure img:hover {
 }
 
 .card img {
-  width: 100%;
+  width: 70%;
   height: 160px;
   object-fit: cover;
   border-radius: 12px;
   z-index: 1;
   position: relative;
-  left: calc(50% - 50%);
+  left: calc(50% - 85px);
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
 }
 
