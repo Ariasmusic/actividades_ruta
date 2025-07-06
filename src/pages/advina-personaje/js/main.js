@@ -2,9 +2,20 @@ function iniciarActividad() {
     document.getElementById('inicio').style.display = 'none';
     document.getElementById('actividad').style.display = 'grid';
 }
+let cont = 0;
 function mostrarInstrucciones() {
+
     const instrucciones = document.getElementById('instrucciones');
-    instrucciones.style.display = instrucciones.style.display === 'none' ? 'block' : 'none';
+    let simbolo = document.getElementById('instru');
+    if (cont === 0) {
+        simbolo.innerHTML = 'X';
+        instrucciones.style.display = instrucciones.style.display === 'none' ? 'block' : 'none';
+        cont++;
+    } else {
+        simbolo.innerHTML = '¿Cómo jugar?';
+        instrucciones.style.display = 'none';
+        cont--;
+    }
 }
 document.querySelectorAll('.card').forEach(card => {
     const button = card.querySelector('button');
