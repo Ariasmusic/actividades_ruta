@@ -1,5 +1,10 @@
+/* --------------------------- */
+/*        ESTILOS GENERALES   */
+/* --------------------------- */
+
 :root {
-  --acento: #f7c948; /* Dorado */
+  --acento: #f7c948;
+  /* Dorado cálido */
   --fondo-oscuro: #0f0f0f;
   --fondo-card: #1a1a1a;
   --gris-suave: #cccccc;
@@ -30,12 +35,60 @@ body {
   overflow-x: hidden;
 }
 
-/* Pantalla de carga */
 body.loading {
   overflow: hidden;
   height: 100vh;
 }
 
+/* Header animado con dorado */
+header {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-bottom: 3px solid var(--acento);
+  box-shadow: 0 4px 25px rgba(247, 201, 72, 0.25);
+  z-index: 1;
+  background-color: #0f0f0f;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: -100px;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      transparent 60deg,
+      var(--acento) 70deg,
+      transparent 80deg,
+      transparent 360deg);
+  animation: faro 10s linear infinite;
+  z-index: -1;
+  opacity: 0.25;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+
+header figure img {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: var(--acento);
+  text-shadow: 2px 2px 6px #000;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--gris-suave);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Loader */
 .loader-container {
   position: fixed;
   background-color: #111;
@@ -82,67 +135,6 @@ body.loading {
   width: 1ch;
   overflow: hidden;
   vertical-align: bottom;
-}
-
-@keyframes typing {
-  0% { content: ''; }
-  33% { content: '.'; }
-  66% { content: '..'; }
-  100% { content: '...'; }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Header con animación de fondo */
-header {
-  background: linear-gradient(270deg, #111111, #1a1a1a, #111111);
-  background-size: 600% 600%;
-  animation: moverFondo 15s ease infinite;
-  padding: 40px 20px 30px;
-  text-align: center;
-  border-bottom: 3px solid var(--acento);
-  box-shadow: 0 4px 15px rgba(247, 201, 72, 0.2);
-  position: relative;
-}
-
-@keyframes moverFondo {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-header figure img {
-  width: 160px;
-  margin-bottom: 15px;
-}
-
-header h1 {
-  font-size: 2.8rem;
-  color: var(--acento);
-  text-shadow: 2px 2px 6px #000;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: var(--gris-suave);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Cards */
@@ -194,15 +186,6 @@ header p {
   animation: parpadeo 3s infinite ease-in-out;
 }
 
-@keyframes parpadeo {
-  0%, 100% {
-    filter: drop-shadow(4px 4px 6px rgba(247, 201, 72, 0.4));
-  }
-  50% {
-    filter: drop-shadow(4px 4px 6px rgba(247, 201, 72, 0.7));
-  }
-}
-
 .card .info {
   margin-top: 12px;
   z-index: 1;
@@ -232,6 +215,72 @@ footer {
   box-shadow: 0 -3px 10px rgba(247, 201, 72, 0.2);
 }
 
+/* --------------------------- */
+/*         ANIMACIONES        */
+/* --------------------------- */
+
+@keyframes faro {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  0% {
+    content: '';
+  }
+
+  33% {
+    content: '.';
+  }
+
+  66% {
+    content: '..';
+  }
+
+  100% {
+    content: '...';
+  }
+}
+
+@keyframes parpadeo {
+
+  0%,
+  100% {
+    filter: drop-shadow(4px 4px 6px rgba(247, 201, 72, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(4px 4px 6px rgba(247, 201, 72, 0.7));
+  }
+}
+
 @keyframes brillo {
   0% {
     transform: rotate(0deg);
@@ -248,7 +297,10 @@ footer {
   }
 }
 
-/* Responsive */
+/* --------------------------- */
+/*        MEDIA QUERIES       */
+/* --------------------------- */
+
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column;
