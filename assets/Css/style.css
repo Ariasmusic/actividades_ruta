@@ -136,7 +136,7 @@ header figure img:hover {
 /* ===== CARDS ===== */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   place-items: center;
   gap: 40px;
   padding: 70px 20px;
@@ -146,7 +146,7 @@ header figure img:hover {
   background: linear-gradient(145deg, var(--gris-medio), rgba(40, 40, 40, 0.95));
   border: 2px solid var(--acento);
   border-radius: 20px;
-  width: 280px;
+  width: 250px;
   padding: 20px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
