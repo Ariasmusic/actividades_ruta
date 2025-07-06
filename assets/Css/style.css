@@ -69,10 +69,15 @@ header::before {
   transform-origin: center;
 }
 
+.header-content {
+  display: flex;
+  justify-content: center;
+}
 
 header figure img {
   width: 160px;
   margin-bottom: 15px;
+  filter: drop-shadow(0 0 1px var(--acento));
 }
 
 header h1 {
@@ -91,6 +96,8 @@ header p {
 /* Loader */
 .loader-container {
   position: fixed;
+  top: 0;
+  left: 0;
   background-color: #111;
   inset: 0;
   z-index: 9999;
@@ -139,10 +146,10 @@ header p {
 
 /* Cards */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  place-items: center;
+  gap: 10px;
   padding: 50px 20px;
 }
 
@@ -150,7 +157,7 @@ header p {
   background: linear-gradient(135deg, var(--fondo-card), #000000);
   border: 2px solid var(--acento);
   border-radius: 20px;
-  width: 250px;
+  width: 220px;
   padding: 15px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
@@ -230,8 +237,6 @@ footer {
 }
 
 
-
-
 @keyframes fadeOut {
   to {
     opacity: 0;
@@ -308,7 +313,15 @@ footer {
   }
 
   header h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  header figure img {
+    width: 160px;
+  }
+
+  header p {
+    font-size: 1rem;
   }
 
   .card {
@@ -321,5 +334,9 @@ footer {
 
   .mensaje-loader {
     font-size: 1.1rem;
+  }
+
+  .header-content {
+    flex-direction: column;
   }
 }
