@@ -12,13 +12,13 @@
 <body>
     <div id="inicio" style="text-align: center; padding: 50px; animation: fadeIn 2s;">
         <h1 style="color: white; font-size: 36px; text-shadow: 2px 2px 4px #000;">Adivina el personaje</h1>
-        <div style="margin: 20px auto; max-width: 800px;">
-            <video id="videoExplicativo" width="100%" controls
-                style="border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+        <div class="video-container">
+            <video id="videoExplicativo" controls >
                 <source src="ruta-del-video.mp4" type="video/mp4">
                 Tu navegador no soporta la reproducción de video.
             </video>
         </div>
+
         <button onclick="mostrarInstrucciones()" class=" btn-secundario">¿Cómo jugar?</button>
         <button onclick="iniciarActividad()" class="btn">Iniciar Actividad</button>
     </div>
