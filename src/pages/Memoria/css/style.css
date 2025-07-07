@@ -262,6 +262,7 @@ button {
     border-radius: 20px;
     cursor: pointer;
     transition: background 0.3s, transform 0.5s;
+        z-index: 1000;
 }
 .btn-home:hover {
     transform: scale(1.1);
