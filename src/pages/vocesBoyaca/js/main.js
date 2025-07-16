@@ -2,7 +2,7 @@ const personajes = [
     {
         nombre: "Juana Velasco de Gallo",
         miniatura: "imgs/Juana_Circular.png",
-        imagen: "imgs/juana velasxo de gallo.png",
+        imagen: "imgs/juanavelascodegallo.jpg",
         audio: "audios/audio1.mp3",
         narracion: "Yo no fui soldado, pero puse todo lo que tenía para la causa...",
         pregunta: "¿Por qué ayudaron tanto a los soldados?"
@@ -10,7 +10,7 @@ const personajes = [
     {
         nombre: "Pedro Pascasio Martínez",
         miniatura: "imgs/Pedro_Circular.png",
-        imagen: "imgs/pedro pascacio martinez.png",
+        imagen: "imgs/pedropascaciomartinez.jpg",
         audio: "audios/audio3.mp3",
         narracion: "Yo era solo un niño, pero ese día tenía la misión de vigilar...",
         pregunta: "¿No tuviste miedo al capturar a Barreiro?"
@@ -18,7 +18,7 @@ const personajes = [
     {
         nombre: "Estefanía Parra",
         miniatura: "imgs/Estefania-Circular.png",
-        imagen: "imgs/Estefania Parra.png",
+        imagen: "imgs/estefania_parra.jpg",
         audio: "audios/audio5.mp3",
         narracion: "No me llamaban soldado, pero sí conocía el río como la palma de mi mano...",
         pregunta: "¿Cómo supiste dónde podían cruzar?"
@@ -26,7 +26,7 @@ const personajes = [
     {
         nombre: "Simón Bolívar",
         miniatura: "imgs/SimonBolivar_Circular.png",
-        imagen: "imgs/simon bolivar.png",
+        imagen: "imgs/simonbolivar.jpg",
         audio: "audios/audio2.mp3",
         narracion: "Después de Pantano de Vargas, sabíamos que no podíamos perder...",
         pregunta: "¿Qué sintió al ganar la Batalla de Boyacá?"
@@ -35,7 +35,7 @@ const personajes = [
     {
         nombre: "Julián Garzón",
         miniatura: "imgs/julian_Circular.png",
-        imagen: "imgs/JulianGarzon.png",
+        imagen: "imgs/juliangarzon.jpg",
         audio: "audios/audio4.mp3",
         narracion: "Nadie sospechaba de mí. Fui con pan, vino y dulces al campamento realista...",
         pregunta: "¿Por qué arriesgó su vida como espía?"
@@ -44,7 +44,7 @@ const personajes = [
     {
         nombre: "Soldado anónimo (Juan Elías)",
         miniatura: "imgs/Soldado_circular.png",
-        imagen: "imgs/Soldado.png",
+        imagen: "imgs/soldado.jpg",
         audio: "audios/audio6.mp3",
         narracion: "Venía desde Casanare. Caminamos por el páramo, con hambre, mojados...",
         pregunta: "¿Qué lo motivó a seguir en medio de tantas dificultades?"
