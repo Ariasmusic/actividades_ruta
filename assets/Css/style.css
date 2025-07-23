@@ -4,7 +4,6 @@
 
 :root {
   --acento: #f7c948;
-  /* Dorado cálido */
   --fondo-oscuro: #0f0f0f;
   --fondo-card: #1a1a1a;
   --gris-suave: #cccccc;
@@ -12,7 +11,7 @@
   --negro-transparente: rgba(0, 0, 0, 0.7);
   --blanco: #ffffff;
   --sombra-card: 0 0 25px rgba(255, 255, 255, 0.05);
-  --futurista:'Times New Roman', Times, serif;
+  --futurista: 'Times New Roman', Times, serif;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
@@ -40,7 +39,7 @@ body.loading {
   height: 100vh;
 }
 
-/* Header animado con dorado */
+/* Header */
 header {
   position: relative;
   overflow: hidden;
@@ -144,38 +143,47 @@ header p {
   vertical-align: bottom;
 }
 
-/* Cards */
+/* --------------------------- */
+/*         CARDS NUEVAS       */
+/* --------------------------- */
+
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  place-items: center;
-  gap: 10px;
-  padding: 50px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 50px 30px;
+  justify-items: center;
 }
 
 .card {
-  background: linear-gradient(135deg, var(--fondo-card), #000000);
-  border: 2px solid var(--acento);
-  border-radius: 20px;
-  width: 220px;
-  padding: 15px;
+  background: linear-gradient(145deg, #1a1a1a, #121212);
+  border: 1px solid rgba(247, 201, 72, 0.4);
+  border-radius: 18px;
+  width: 260px;
+  padding: 20px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
-  box-shadow: var(--sombra-card);
+  box-shadow: 0 10px 25px rgba(247, 201, 72, 0.08);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card::before {
+.card::after {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(rgba(247, 201, 72, 0.2), transparent 70%);
-  animation: brillo 4s infinite linear;
-  z-index: 0;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(247, 201, 72, 0.2), transparent);
+  transition: left 0.5s ease-in-out;
+}
+
+.card:hover::after {
+  left: 100%;
 }
 
 .card:hover {
@@ -185,30 +193,35 @@ header p {
 
 .card img {
   width: 100%;
-  height: 60%;
+  height: 160px;
+  object-fit: cover;
   border-radius: 12px;
-  z-index: 1;
-  position: relative;
-  filter: drop-shadow(4px 4px 6px rgba(253, 253, 253, 0.3));
-  animation: parpadeo 3s infinite ease-in-out;
+  border: 2px solid rgba(247, 201, 72, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card .info {
-  margin-top: 12px;
-  z-index: 1;
-  position: relative;
+  margin-top: 14px;
+  flex-grow: 1;
 }
 
 .card h2 {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: var(--acento);
-  margin-bottom: 5px;
-  text-shadow: 1px 1px 5px #000;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-shadow: 0 0 2px #000;
 }
 
 .card p {
-  font-size: 1rem;
-  color: var(--gris-texto);
+  font-size: 0.95rem;
+  color: var(--gris-suave);
+  line-height: 1.3;
 }
 
 /* Footer */
@@ -235,7 +248,6 @@ footer {
     transform: rotate(360deg);
   }
 }
-
 
 @keyframes fadeOut {
   to {
@@ -274,42 +286,13 @@ footer {
   }
 }
 
-@keyframes parpadeo {
-
-  0%,
-  100% {
-    filter: drop-shadow(4px 4px 6px rgba(247, 201, 72, 0.4));
-  }
-
-  50% {
-    filter: drop-shadow(4px 4px 6px rgba(247, 201, 72, 0.7));
-  }
-}
-
-@keyframes brillo {
-  0% {
-    transform: rotate(0deg);
-    opacity: 0.2;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    opacity: 0.2;
-  }
-}
-
 /* --------------------------- */
 /*        MEDIA QUERIES       */
 /* --------------------------- */
 
 @media (max-width: 768px) {
   .card-container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
   header h1 {
@@ -317,7 +300,7 @@ footer {
   }
 
   header figure img {
-    width: 160px;
+    width: 100px;
   }
 
   header p {
@@ -326,10 +309,6 @@ footer {
 
   .card {
     width: 90%;
-  }
-
-  header figure img {
-    width: 100px;
   }
 
   .mensaje-loader {
