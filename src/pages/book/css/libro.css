@@ -63,6 +63,7 @@ body {
 }
 
 .character {
+    margin: 10px auto;
     width: 300px;
     height: 300px;
     filter: sepia(70%) contrast(85%) brightness(90%) saturate(70%);
@@ -94,7 +95,7 @@ body {
 
 .page-content h2 {
     position: relative;
-    bottom: -300px;
+    bottom: -350px;
     font-family: 'Verve', cursive;
 }
 
