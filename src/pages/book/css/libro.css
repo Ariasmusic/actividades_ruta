@@ -63,8 +63,8 @@ body {
 }
 
 .character {
-    width: 30%;
-    height: 30%;
+    width: 300px;
+    height: 300px;
     filter: sepia(70%) contrast(85%) brightness(90%) saturate(70%);
     transition: filter 0.5s;
     position: absolute;
@@ -84,7 +84,7 @@ body {
 
 .page-content h1 {
     font-family: 'Verve', cursive;
-    font-size: 2.3em;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
