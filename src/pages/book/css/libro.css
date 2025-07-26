@@ -80,10 +80,6 @@ body {
 .page-content {
     padding: 20px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .page-content h1 {
