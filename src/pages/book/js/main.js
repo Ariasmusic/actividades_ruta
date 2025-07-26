@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const flipbook = document.getElementById("flipbook");
+    const audio = document.getElementById("audio");
 
     const pageFlip = new St.PageFlip(flipbook, {
-        width: 700,
-        height: 650,
+        width: 900,
+        height: 800,
         size: "fixed",
         minWidth: 315,
         maxWidth: 1000,
@@ -28,9 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("prev-btn").addEventListener("click", () => {
         pageFlip.flipPrev();
+        audio.play();
     });
 
     document.getElementById("next-btn").addEventListener("click", () => {
         pageFlip.flipNext();
+        audio.play();
     });
 });
