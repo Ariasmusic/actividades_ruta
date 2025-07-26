@@ -1,6 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     background: #5d4037;
+    background-image: url('../img/fondo.png');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(70%) contrast(85%) brightness(90%) saturate(70%);
+    opacity: .9;
     overflow: hidden;
     margin: 0;
     padding: 0;
