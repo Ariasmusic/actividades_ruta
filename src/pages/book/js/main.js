@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const flipbook = document.getElementById("flipbook");
 
     const pageFlip = new St.PageFlip(flipbook, {
-        width: 700,
+        width: 400,
         height: 600,
         size: "fixed",
         minWidth: 315,
