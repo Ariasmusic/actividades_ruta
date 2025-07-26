@@ -5,7 +5,6 @@ body {
     background-size: cover;
     background-position: center;
     filter: sepia(70%) contrast(85%) brightness(90%) saturate(70%);
-    opacity: .9;
     overflow: hidden;
     margin: 0;
     padding: 0;
