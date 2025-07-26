@@ -63,8 +63,8 @@ body {
 }
 
 .character {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     filter: sepia(70%) contrast(85%) brightness(90%) saturate(70%);
     transition: filter 0.5s;
     position: absolute;
