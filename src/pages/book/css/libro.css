@@ -17,6 +17,34 @@ body {
     font-style: normal;
 }
 
+/* video fondo */
+.fondo-video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fondo-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+.fondo-video .contenido {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* end video */
 .audio-button {
     position: absolute;
     bottom: 50px;
@@ -120,7 +148,7 @@ body {
 
 .page-content h2 {
     position: relative;
-    bottom: -350px;
+    bottom: -450px;
     font-family: 'Verve', cursive;
 }
 
