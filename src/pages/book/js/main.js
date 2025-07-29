@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const pageFlip = new St.PageFlip(flipbook, {
         width: 700,
-        height: 600,
+        height: 650,
         size: "fixed",
         minWidth: 315,
         maxWidth: 1000,
