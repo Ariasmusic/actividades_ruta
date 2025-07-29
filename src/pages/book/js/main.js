@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById("audio");
 
     const pageFlip = new St.PageFlip(flipbook, {
-        width: 700,
-        height: 700,
+        width: 900,
+        height: 800,
         size: "fixed",
         minWidth: 315,
         maxWidth: 1000,
@@ -35,5 +35,30 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("next-btn").addEventListener("click", () => {
         pageFlip.flipNext();
         audio.play();
+    });
+});
+function reproducirAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    if (!audio) return;
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
+document.querySelectorAll(".audio-button").forEach((button) => {
+    const audioId = button.getAttribute("data-audio");
+
+    // Detener propagación para múltiples eventos de entrada
+    ["click", "pointerdown", "mousedown", "touchstart"].forEach(eventType => {
+        button.addEventListener(eventType, (event) => {
+            event.stopPropagation();
+        });
+    });
+
+    // Reproducir audio con clic
+    button.addEventListener("click", () => {
+        reproducirAudio(audioId);
     });
 });
