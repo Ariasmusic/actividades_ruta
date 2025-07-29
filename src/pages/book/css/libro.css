@@ -142,12 +142,12 @@ body {
 
 .page-content h1 {
     font-family: 'Verve', cursive;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 .page-content h2 {
     position: relative;
-    bottom: -350px;
+    bottom: -250px;
     font-family: 'Verve', cursive;
 }
 
