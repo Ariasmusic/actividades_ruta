@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background: #5d4037;
-    background-image: url('../img/fondo.png');
+    /* background-image: url('../img/fondo.png'); */
     background-size: cover;
     background-position: center;
     filter: sepia(70%) contrast(85%) brightness(90%) saturate(70%);
@@ -39,6 +39,7 @@ body {
 .fondo-video .contenido {
     position: relative;
     z-index: 1;
+    top: calc(5% - 140px);
     color: white;
     text-align: center;
     padding: 2rem;
@@ -47,8 +48,8 @@ body {
 /* end video */
 .audio-button {
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom: calc(15% - 24px);
+    left: calc(50% - 24px);
     width: 48px;
     height: 48px;
     background: none;
@@ -71,8 +72,8 @@ body {
 }
 
 #flipbook {
-    width: 80vw;
-    height: 80vh;
+    width: 90vw;
+    height: 90vh;
     margin: auto;
     position: relative;
 
@@ -138,16 +139,49 @@ body {
 .page-content {
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
+.page-content .parrafo {
+    position: absolute;
+    top: calc(40% - 200px);
+    left: calc(50% - 300px);
+    font-size: 1.5rem;
+    line-height: 2.5;
+    text-align: center;
+    max-width: 600px;
+    font-family: 'IM Fell English', serif;
+}
+.page-content .img_escena {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    width: 600px;
+    height: auto;
+    z-index: 0;
+    filter: sepia(70%) contrast(85%) brightness(90%) saturate(70%);
+    box-shadow: 5px 5px 15px rgba(235, 191, 191, 0.507);
+    border-radius: 20px;
+    transition: filter 0.5s;
+}
 .page-content h1 {
+    position: relative;
+    top: -350px;
+    z-index: 1;
     font-family: 'Verve', cursive;
     font-size: 2.5em;
+    /* margin-bottom: 20px; */
 }
 
 .page-content h2 {
     position: relative;
-    bottom: -250px;
+    z-index: 1;
+    bottom: -50px;
     font-family: 'Verve', cursive;
 }
 
