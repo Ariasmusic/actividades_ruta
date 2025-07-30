@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Libro Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/-icon-e-book.png" type="image/x-icon">
     <link rel="stylesheet" href="page-flip/page-flip.min.css" />
     <link rel="stylesheet" href="css/libro.css" />
@@ -13,7 +14,7 @@
 <body>
     <div class="fondo-video">
         <video autoplay muted loop playsinline>
-            <source src="video/Fondo.mp4" type="video/mp4">
+            <source src="video/fondo.mp4" type="video/mp4">
         </video>
         <div class="contenido">
             <div class="container">
@@ -31,16 +32,18 @@
                     <div class="page">
                         <div class="page-content">Introducción</div>
                     </div>
-
+                    <div class="page">
+                        <div class="page-content">Introducción</div>
+                    </div>
                     <!-- Contenido (16 páginas) -->
+
                     <div class="page">
-                        <div class="page-content">Página 1</div>
-                    </div>
-                    <div class="page">
-                        <div class="page-content">Página 2</div>
-                    </div>
-                    <div class="page">
-                        <div class="page-content">Página 3
+                        <div class="page-content">
+                            <p class="parrafo">En los primeros días de agosto de 1819, luego de la batalla del pantano
+                                de Vargas, el
+                                ejército patriota tomó el camino que de Paipa conduce a Toca y Chivatá, para dirigirse
+                                de forma estratégica a la ciudad de Tunja, evitando la vía principal para no ser
+                                detectados por los espías realistas. </p>
                             <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
                                 <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio1">
                             </button>
@@ -48,89 +51,279 @@
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 4
-
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 5
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">El 5 de agosto, al enterarse del movimiento de los patriotas, el ejército
+                                realista marchó por el camino real de Paipa a Tunja en medio de la lluvia. Atravesaron
+                                el páramo, cruzaron por Cómbita y al día siguiente instalaron su campamento en el
+                                caserío de Motavita. Desde allí, el general Barreiro fue alertado por espías sobre la
+                                cercanía del enemigo. </p>
                             <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
                                 <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio1">
                             </button>
-                            <audio id="audio1" src="audios/audio1.mp3"></audio>
+                            <audio id="audio2" src="audios/audio2.mp3"></audio>
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 6
-
-                        </div>
-                    </div>
-                    <div class="page">
-                        <div class="page-content">Página 7
-                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
-                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio1">
+                        <div class="page-content">
+                            <p class="parrafo">Mientras tanto, al pasar por Toca, el clérigo patriota Andrés Gallo
+                                informó a su familia sobre el avance del ejército. Aquella noche, su madre, doña Juana
+                                Velasco de Gallo, partió con dos sirvientes hacia Tunja, llegando al amanecer del día
+                                siguiente. </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;"
+                                onclick="reproducirAudio('audio3')">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio3">
                             </button>
-                            <audio id="audio1" src="audios/audio1.mp3"></audio>
+                            <audio id="audio3" src="audios/audio3.mp3"></audio>
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 8
-
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 9
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">La noticia del avance realista generó alarma entre la población. A pesar
+                                de las lluvias, los habitantes de Cómbita y Motavita huyeron rápidamente. Se llevaron
+                                los animales, cosechas y alimentos, dificultando el abastecimiento del ejército
+                                realista. </p>
                             <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
-                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio1">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio4">
                             </button>
-                            <audio id="audio1" src="audios/audio1.mp3"></audio>
+                            <audio id="audio4" src="audios/audio4.mp3"></audio>
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 10
-
-                        </div>
-                    </div>
-                    <div class="page">
-                        <div class="page-content">Página 11
+                        <div class="page-content">
+                            <p class="parrafo">Por su parte, Juan Loño el gobernador de Tunja, con el batallón Tercero
+                                de Numancia, caballería, municiones y tres piezas de artillería, abandonó la ciudad y se
+                                dirigió a Motavita, donde se uniría al cuartel realista del general Barreiro. </p>
                             <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
-                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio1">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio5">
                             </button>
-                            <audio id="audio1" src="audios/audio1.mp3"></audio>
-                        </div>
-                    </div>
-                    <div class="page">
-                        <div class="page-content">Página 12
+                            <audio id="audio5" src="audios/audio5.mp3"></audio>
 
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 13
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">Al ingresar a Tunja, la vanguardia patriota tomó control de 600 fusiles,
+                                cobijas, alpargatas, telas y suministros médicos que habían pertenecido a los realistas.
+                                Fue un golpe clave que fortaleció a las tropas antes del inminente enfrentamiento de la
+                                Batalla de Boyacá. </p>
                             <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
-                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio1">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio6">
                             </button>
-                            <audio id="audio1" src="audios/audio1.mp3"></audio>
-                        </div>
-                    </div>
-                    <div class="page">
-                        <div class="page-content">Página 14
+                            <audio id="audio6" src="audios/audio6.mp3"></audio>
 
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 15
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">La población civil de Tunja y de pueblos cercanos se volcaron en apoyo al
+                                ejército patriota; entregaron frutas, amasijos y otras comidas de la región, además de
+                                caballos, ganado y herramientas necesarias para la causa libertadora. </p>
                             <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
-                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio1">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio7">
                             </button>
-                            <audio id="audio1" src="audios/audio1.mp3"></audio>
+                            <audio id="audio7" src="audios/audio7.mp3"></audio>
                         </div>
                     </div>
                     <div class="page">
-                        <div class="page-content">Página 16
-
+                        <div class="page-content">
+                            <p class="parrafo">Desde las alturas de Motavita, los realistas divisaron un grupo de
+                                infantería patriota asentado en la cima de la Ermita de Chiquinquirá, confirmando que el
+                                enemigo se posicionaba estratégicamente. </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio8">
+                            </button>
+                            <audio id="audio8" src="audios/audio8.mp3"></audio>
                         </div>
                     </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
 
+                            <p class="parrafo">El general Bolívar llegó a Tunja con el grueso del ejército. Fueron
+                                recibidos con emoción y entusiasmo, reconociendo su labor y alentándolos a continuar.
+                                Hombres de todas las clases sociales se enlistaron, dando origen al batallón de
+                                Tiradores. </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button" data-audio="audio9">
+                            </button>
+                            <audio id="audio9" src="audios/audio9.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">La situación realista era precaria, pues además del hostigamiento que
+                                recibían de las guerrillas patriotas en los caminos, las tropas estaban agotadas, sus
+                                ropas y armas mojadas por la lluvia, y los víveres se agotaban. Intentaban secar sus
+                                pertenencias usando el calor de las fogatas en el campamento. </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button"
+                                    data-audio="audio10">
+                            </button>
+                            <audio id="audio10" src="audios/audio10.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+
+                            <p class="parrafo">Conmovidas por la precariedad del ejército patriota, Juana Velasco de
+                                Gallo y un grupo de mujeres tunjanas organizaron una gran labor de apoyo: confeccionaron
+                                más de 2.000 camisas. Incluso donaron parte de su ropa para vestir a los soldados.</p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button"
+                                    data-audio="audio11">
+                            </button>
+                            <audio id="audio11" src="audios/audio11.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">Al respecto el general Anzoátegui escribió a su esposa: "…auxiliado eso
+                                sí por el patriotismo y el entusiasmo de los patriotas de la provincia de Tunja,
+                                especialísimamente por las mujeres que, ¡no lo creerás! Se despojaron realmente de su
+                                ropa para hacer con ella camisas, calzoncillos y chaquetas para nuestros soldados y de
+                                todo lo que tenían para socorrernos. Fue esta una resurrección milagrosa. Nos volvió la
+                                vida, el valor, y la fe...". </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button"
+                                    data-audio="audio12">
+                            </button>
+                            <audio id="audio12" src="audios/audio12.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+
+                            <p class="parrafo">En honor a la causa, Juana Velasco de Gallo y sus allegadas ofrecieron
+                                una cena de bienvenida al estado mayor del ejército patriota. Una velada que enaltecía
+                                su labor en la causa independentista. </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button"
+                                    data-audio="audio13">
+                            </button>
+                            <audio id="audio13" src="audios/audio13.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">Terminada la cena, Bolívar decidió enviar al espía Julián Garzón “el
+                                Crespo", amigo del coronel español Juan Loño, al campamento de Barreiro haciéndole creer
+                                que el ejército patriota se quedaría en Tunja descansando. </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button"
+                                    data-audio="audio14">
+                            </button>
+                            <audio id="audio14" src="audios/audio14.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+
+                            <p class="parrafo">Julián partió con un peón y una carga de regalos: pan, vino, dulces y
+                                aguardiente. Fue recibido con amabilidad en el campamento realista. Barreiro convencido
+                                por la desinformación, declaró:
+                                “…que Bolívar siga en Tunja, que yo mañana marcho hacia Santafé.”
+                                Sin saberlo, acababa de caer en la trampa estratégica que sellaría su derrota.
+                            </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button"
+                                    data-audio="audio15">
+                            </button>
+                            <audio id="audio15" src="audios/audio15.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <p class="parrafo">De regreso, Garzón le informó a Bolívar sobre las precarias condiciones y
+                                el desánimo en las filas realistas, así como de la intención de Barreiro de avanzar a
+                                Santafé para reunirse con el virrey Sámano para reforzar las tropas y enfrentar al
+                                ejército patriota, ante esta información Bolívar decide salir al encuentro de los
+                                realistas en el paso por el río Boyacá para obligarlos a dar la batalla. </p>
+                            <button id="btn-audio" style="background: none; border: none; cursor: pointer;">
+                                <img src="img/icon_audio.png" alt="icon-audio" class="audio-button"
+                                    data-audio="audio16">
+                            </button>
+                            <audio id="audio16" src="audios/audio16.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="page-content">
+                            <img src="img/fondo.png" alt="imagen_3" class="img_escena">
+                        </div>
+                    </div>
                     <!-- Contraportada -->
                     <div class="page contraportada">
                         <div class="page-content">Contraportada</div>
