@@ -149,12 +149,12 @@ body {
 
 .page-content .parrafo {
     position: absolute;
-    top: calc(40% - 200px);
-    left: calc(40% - 300px);
-    font-size: 1.5rem;
-    line-height: 2.5;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    font-size: 1.2rem;
+    line-height: 2;
     text-align: justify;
-    max-width: 700px;
+    max-width: 600px;
     font-family: 'IM Fell English', serif;
 }
 
