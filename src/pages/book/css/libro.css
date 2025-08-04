@@ -80,7 +80,7 @@ body {
 }
 
 .page {
-    background: #fff8dc;
+    background-color: #efcc3f;
     border: 1px solid #d1c7a1;
     display: flex;
     align-items: center;
@@ -92,7 +92,7 @@ body {
 .page {
     background-image: url('../img/371008697_11469007.png');
     /* ruta relativa al HTML */
-    background-size: 100vw 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     color: #000;
