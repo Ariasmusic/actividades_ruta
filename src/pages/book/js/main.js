@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById("audio");
 
     const pageFlip = new St.PageFlip(flipbook, {
-        width: 500,
-        height: 400,
+        width: 600,
+        height: 450,
         size: "fixed",
         minWidth: 315,
         maxWidth: 1000,
@@ -62,6 +62,7 @@ document.querySelectorAll(".audio-button").forEach((button) => {
         reproducirAudio(audioId);
     });
 });
+
 
 
 
