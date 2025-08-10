@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const pageFlip = new St.PageFlip(flipbook, {
         width: 600,
-        height: 450,
+        height: 500,
         size: "fixed",
         minWidth: 315,
         maxWidth: 1000,
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         maxHeight: 1350,
         maxShadowOpacity: 0.5,
         showCover: true,
-        mobileScrollSupport: false
+        mobileScrollSupport: false,
     });
 
     const pages = flipbook.querySelectorAll(".page");
@@ -26,6 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     pageFlip.loadFromHTML(flipbook.querySelectorAll(".page"));
+    // Manejo de clics en el índice
+    document.querySelectorAll(".tabla-contenido a").forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            const page = parseInt(link.getAttribute("data-page"), 10);
+            pageFlip.flip(page);
+            audio.play();
+        });
+    });
+
+    // Botón de inicio
+    document.getElementById("btn_home").addEventListener("click", function () {
+        // Cambia a la página del índice (aquí uso la 3)
+        pageFlip.flip(3);
+    });
 
     document.getElementById("prev-btn").addEventListener("click", () => {
         pageFlip.flipPrev();
@@ -62,7 +77,3 @@ document.querySelectorAll(".audio-button").forEach((button) => {
         reproducirAudio(audioId);
     });
 });
-
-
-
-
