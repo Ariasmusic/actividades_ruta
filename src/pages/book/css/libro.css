@@ -48,7 +48,7 @@ body {
 /* end video */
 .audio-button {
     position: absolute;
-    top: calc(10% - 24px);
+    bottom: calc(10% - 24px);
     left: calc(50% - 24px);
     width: 48px;
     height: 48px;
@@ -113,6 +113,38 @@ body {
     font-weight: bold;
 }
 
+.tabla-contenido {
+    position: absolute;
+    top: 130px;
+    list-style: none;
+    padding: 0;
+    text-align: justify;
+    line-height: 2em;
+    /* margin-top: 2rem; */
+    font-family: 'IM Fell English', serif;
+}
+
+.tabla-contenido li {
+    margin: 0.5rem 0;
+    background: url('../img/espada.png') no-repeat left center;
+    background-size: 16px 16px;
+    /* tamaño de la "viñeta" */
+    padding-left: 25px;
+    /* separa el texto de la imagen */
+}
+
+.tabla-contenido a {
+    color: #8b4513;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.2s ease;
+}
+
+.tabla-contenido a:hover {
+    color: #ab7b0a;
+    text-decoration: underline;
+}
+
 .character {
     width: 50%;
     height: 50%;
@@ -158,20 +190,40 @@ body {
     font-family: 'IM Fell English', serif;
 }
 
+.title_escena {
+    position: relative;
+    top: -300px;
+    z-index: 1;
+    color: #ab7b0a;
+    font-family: 'prince-valiant', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+.subtitle {
+    position: relative;
+    top: -325px;
+    z-index: 1;
+    color: #ab7b0a;
+    font-family: 'prince-valiant', cursive;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+}
 .page-content .img_escena {
     position: absolute;
-    top: calc(40% - 200px);
+    top: calc(55% - 200px);
     left: calc(50% - 300px);
     width: 600px;
-    height: auto;
+    height: 400px;
     z-index: 0;
-    filter: grayscale(100%) contrast(160%) brightness(1.1);
+    /* filter: grayscale(100%) contrast(160%) brightness(1.1); */
     mix-blend-mode: multiply;
 }
 
 .page-content h1 {
     position: relative;
-    top: -270px;
+    top: -240px;
     z-index: 1;
     font-family: 'prince-valiant', cursive;
     font-size: 2.5em;
@@ -205,13 +257,19 @@ body {
     transition: background-color 0.3s;
 }
 
-.controls a img {
+.controls a .btn_opc {
     width: 150px;
     transition: filter 0.3s;
     cursor: pointer;
 }
-
+.controls a .btn_home {
+    width: 70px;
+    transition: filter 0.3s;
+    cursor: pointer;
+    filter: drop-shadow(2px 4px 6px rgb(255, 255, 255));
+}
 .controls a:hover img {
     filter: brightness(0.8);
     transform: scale(1.1);
+    filter: drop-shadow(2px 4px 6px rgb(255, 255, 255));
 }
