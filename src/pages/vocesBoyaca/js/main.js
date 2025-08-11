@@ -86,14 +86,30 @@ function mostrarPersonaje(index, elementoOrigen) {
         <h3>${personajeActual.nombre}</h3>
         <audio controls src="${personajeActual.audio}"></audio>
         <p>${personajeActual.narracion}</p>
-        <button onclick="mostrarPregunta()">¿Quieres saber más?</button>
+        <button onclick="mostrarInfo()">Más Información</button>
+        <button onclick="mostrarPregunta()">Reto</button>
         <p id="pregunta-personaje" class="oculto"></p>
         <button onclick="volverAlInicio()">Volver</button>
       </div>
     `;
     }, 700);
 }
-
+function mostrarInfo() {
+    const info = document.createElement('div');
+    info.className = 'info-personaje';
+    info.innerHTML = `
+        <h4>Información Adicional</h4>
+        <p>${personajeActual.nombre} fue un personaje clave en la Batalla de Boyacá, contribuyendo de manera significativa a la independencia.</p>
+        <button onclick="cerrarInfo()">Cerrar</button>
+    `;
+    document.getElementById("centro").appendChild(info);
+}
+function cerrarInfo() {
+    const info = document.querySelector('.info-personaje');
+    if (info) {
+        info.remove();  
+    }
+}
 function mostrarPregunta() {
     const p = document.getElementById("pregunta-personaje");
     if (personajeActual && personajeActual.pregunta) {
