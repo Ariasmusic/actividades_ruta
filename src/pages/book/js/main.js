@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const pageFlip = new St.PageFlip(flipbook, {
         width: 650,
-        height: 500,
+        height: 570,
         size: "fixed",
         minWidth: 315,
         maxWidth: 1000,
@@ -77,6 +77,7 @@ document.querySelectorAll(".audio-button").forEach((button) => {
         reproducirAudio(audioId);
     });
 });
+
 
 
 
