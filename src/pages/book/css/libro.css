@@ -223,10 +223,10 @@ body {
 
 .page-content h1 {
     position: relative;
-    top: -240px;
+    top: -250px;
     z-index: 1;
     font-family: 'prince-valiant', cursive;
-    font-size: 2.5em;
+    font-size: 2.3em;
     color: #ab7b0a;
     /* margin-bottom: 20px; */
 }
@@ -234,10 +234,10 @@ body {
 .page-content h2 {
     position: relative;
     z-index: 1;
-    bottom: -50px;
+    bottom: -70px;
     color: #ab7b0a;
     font-family: 'prince-valiant', cursive;
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 
 .controls {
@@ -273,3 +273,4 @@ body {
     transform: scale(1.1);
     filter: drop-shadow(2px 4px 6px rgb(255, 255, 255));
 }
+
