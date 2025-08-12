@@ -192,7 +192,7 @@ body {
 
 .title_escena {
     position: relative;
-    top: -300px;
+    top: -280px;
     z-index: 1;
     color: #ab7b0a;
     font-family: 'prince-valiant', cursive;
@@ -234,7 +234,7 @@ body {
 .page-content h2 {
     position: relative;
     z-index: 1;
-    bottom: -70px;
+    bottom: -30px;
     color: #ab7b0a;
     font-family: 'prince-valiant', cursive;
     font-size: 2rem;
@@ -273,4 +273,5 @@ body {
     transform: scale(1.1);
     filter: drop-shadow(2px 4px 6px rgb(255, 255, 255));
 }
+
 
