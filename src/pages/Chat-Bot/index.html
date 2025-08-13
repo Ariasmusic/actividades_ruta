@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Ruta Libertadora 1819 — Relato Interactivo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+</head>
+<body>
+  <div class="container-fluid py-3">
+    <div class="row g-3">
+      <!-- Narrador / personaje lateral (genérico) -->
+      <aside class="col-12 col-lg-3">
+        <div class="frame p-3 h-100">
+          <h3 class="header-brand mb-3">Crónica de 1819</h3>
+          <img id="portrait" class="portrait w-100 mb-3" src="assets/narrador_generico.png" alt="Narrador genérico">
+          <div class="ribbon mb-3"></div>
+          <h5 id="narratorName" class="mb-2">Guía de 1819</h5>
+        </div>
+      </aside>
+
+      <!-- Panel principal -->
+      <main class="col-12 col-lg-9">
+        <div class="frame p-3">
+          <!-- Zona de consulta (separada) -->
+          <div class="query-box p-2 d-flex align-items-center gap-2 mb-3">
+            <button id="suggestBtn" class="btn btn-sm btn-outline-warning">🎲 Sugerir</button>
+            <textarea id="q" class="query-input" rows="2" placeholder="Escribe tu consulta (Enter para enviar)…"></textarea>
+            <button id="askBtn" class="btn-gold">Relatar</button>
+          </div>
+
+          <!-- Respuestas estilo pergamino (no chat clásico) -->
+          <section id="relato" class="scroll-soft" style="min-height:48vh; max-height:68vh; overflow:auto; display:flex; flex-direction:column-reverse; gap:12px;">
+            <!-- Las tarjetas se agregan por JS (prepend) -->
+          </section>
+        </div>
+
+        <p class="footer-note mt-3 text-center">
+          
+        </p>
+      </main>
+    </div>
+  </div>
+
+  <script src="data/kb.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
