@@ -104,3 +104,11 @@ body{
 .scroll-soft{ scrollbar-width: thin; scrollbar-color: #bca66b transparent; }
 .scroll-soft::-webkit-scrollbar{ height: 8px; width:10px; }
 .scroll-soft::-webkit-scrollbar-thumb{ background:#bca66b; border-radius:8px; }
+
+.narrador-video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  border: 3px solid #a67c52;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
