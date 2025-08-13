@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const stream = document.getElementById('relato');
   const narratorName = document.getElementById('narratorName');
   const portrait = document.getElementById('portrait');
+  const narradorVideo = document.getElementById('narradorVideo'); // 🎯 referencia al video
 
   // Expuesto para edición rápida del narrador genérico
   const Narrador = {
@@ -13,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     imagen: 'assets/narrador_generico.png'
   };
   narratorName.textContent = Narrador.nombre;
-  portrait.src = Narrador.imagen;
+  // portrait.src = Narrador.imagen;
 
-  const fuse = new Fuse(KB, { keys:['title','tags','content'], threshold:0.32, includeScore:true });
+  const fuse = new Fuse(KB, { keys: ['title', 'tags', 'content'], threshold: 0.32, includeScore: true });
 
   function addCard(kind, text) {
     const card = document.createElement('div');
@@ -27,34 +28,57 @@ document.addEventListener('DOMContentLoaded', () => {
     stream.prepend(card); // apilar tipo "panel", no chat lineal
   }
 
-  function synthesizeAnswer(items, query){
+  function synthesizeAnswer(items, query) {
     const intro = query ? `<strong>Consulta:</strong> ${escapeHtml(query)}<br><br>` : '';
     const bullets = items.map(i => `<strong>${i.title}:</strong> ${i.content}`).join('<br><br>');
     const hint = `<br><em>Explora más con palabras clave como "Pisba", "Vargas", "Boyacá".</em>`;
     return intro + bullets + hint;
   }
 
-  function searchAndAnswer(query){
-    const r = fuse.search(query).slice(0,4);
-    if(r.length === 0){
-      const base = KB.filter(k => ['intro','itinerario','consecuencias'].includes(k.id));
+  function searchAndAnswer(query) {
+    const r = fuse.search(query).slice(0, 4);
+    if (r.length === 0) {
+      const base = KB.filter(k => ['intro', 'itinerario', 'consecuencias'].includes(k.id));
       return synthesizeAnswer(base, query);
     }
     return synthesizeAnswer(r.map(x => x.item), query);
   }
 
-  function handleAsk(){
+  function handleAsk() {
     const text = (q.value || '').trim();
-    if(!text) return;
+    if (!text) return;
+
+    // Mensaje del usuario
     addCard('user', escapeHtml(text));
+
+    // Respuesta del narrador
     const answer = searchAndAnswer(text);
-    // Estilo "pensamiento" del personaje (narrador)
     addCard('guide', `<span style="font-family:'Dancing Script', cursive; font-size:1.2rem;">${answer}</span>`);
+
+    // 🎯 Reproducir video narrador
+    if (narradorVideo) {
+      narradorVideo.currentTime = 0; // reinicia desde inicio
+      narradorVideo.play().catch(err => console.warn("No se pudo reproducir el video automáticamente:", err));
+    }
+
     q.value = '';
   }
 
+  // ⏹ Pausar y reiniciar cuando termine el video
+  if (narradorVideo) {
+    narradorVideo.addEventListener('ended', () => {
+      narradorVideo.pause();
+      narradorVideo.currentTime = 0;
+    });
+  }
+
   askBtn.addEventListener('click', handleAsk);
-  q.addEventListener('keydown', (e)=>{ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); handleAsk(); }});
+  q.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleAsk();
+    }
+  });
 
   suggestBtn.addEventListener('click', () => {
     const ideas = [
@@ -64,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
       'Itinerario de la Ruta Libertadora',
       'Consecuencias de 1819'
     ];
-    q.value = ideas[Math.floor(Math.random()*ideas.length)];
+    q.value = ideas[Math.floor(Math.random() * ideas.length)];
     q.focus();
   });
 
-  function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function escapeHtml(s) { return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
   // Mensaje inicial
   addCard('guide', `<span style="font-family:'Dancing Script', cursive; font-size:1.2rem;">
