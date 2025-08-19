@@ -76,7 +76,6 @@ header::before {
 header figure img {
   width: 160px;
   margin-bottom: 15px;
-  filter: drop-shadow(0 0 1px var(--acento));
 }
 
 header h1 {
