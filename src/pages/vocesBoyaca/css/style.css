@@ -1,3 +1,8 @@
+:root {
+    --acento: #ffffff;
+
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,6 +10,59 @@ body {
     color: #fff;
     text-align: center;
     min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px 30px;
+    text-align: center;
+    border-bottom: 3px solid var(--acento);
+    box-shadow: 0 4px 25px rgba(245, 245, 245, 0.5);
+    z-index: 1;
+    background-color: #004980;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: -100px;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 60deg,
+            var(--acento) 70deg,
+            transparent 80deg,
+            transparent 360deg);
+    animation: faro 10s linear infinite;
+    z-index: -1;
+    opacity: 0.25;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+header figure img {
+    width: 160px;
+    margin-bottom: 15px;
+    /* filter: drop-shadow(0 0 1px var(--acento)); */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: var(--acento);
+    text-shadow: 2px 2px 6px #000;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--gris-suave);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 h1,
@@ -173,6 +231,29 @@ audio {
     margin-top: 15px;
 }
 
+.btn-home {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.5s;
+    z-index: 1000;
+}
+
+.btn-home:hover {
+    transform: scale(1.1);
+}
+
+.btn-home img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
 /* Animación de entrada */
 @keyframes fadeInUp {
     from {
@@ -336,26 +417,17 @@ audio {
 .instrucciones-box button:hover {
     transform: scale(1.05);
 }
-.btn-home {
-    position: fixed;
-    bottom:  20px;
-    left: 20px;
-    width: 100px;
-    height: 100px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.5s;
-        z-index: 1000;
+
+@keyframes faro {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
-.btn-home:hover {
-    transform: scale(1.1);
-}
-.btn-home img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-}
+
 /* RESPONSIVE PARA TABLETS Y CELULARES */
 @media screen and (max-width: 1000px) {
     .pantalla-personajes {
