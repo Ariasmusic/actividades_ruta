@@ -4,11 +4,12 @@
   --border-color: #8b5e3c;
   --control-bg: rgba(255, 250, 240, 0.9);
   --control-text: #3b2f2f;
-  --accent-color: #c19a6b;
+  --accent-color: #004980;
   --accent-text: #ffffff;
   --liberator-green: #4b7f52;
   --liberator-gold: #d4af37;
   --liberator-red: #a72828;
+  --acento: #ffff;
 }
 
 body.dark-mode {
@@ -28,7 +29,6 @@ body.dark-mode {
 body {
   font-family: 'Rubik', sans-serif;
   margin: 0;
-  padding: 20px;
   background: var(--bg-color);
   color: var(--text-color);
   transition: background 0.3s, color 0.3s;
@@ -39,6 +39,69 @@ body {
   background-position: center;
   background-attachment: fixed;
   animation: fadeIn 1s ease-in-out;
+}
+
+/* Header */
+header {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-bottom: 3px solid var(--acento);
+  box-shadow: 0 4px 25px rgba(245, 245, 245, 0.5);
+  z-index: 1;
+  background-color: #004980;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: -100px;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      transparent 60deg,
+      var(--acento) 70deg,
+      transparent 80deg,
+      transparent 360deg);
+  animation: faro 10s linear infinite;
+  z-index: -1;
+  opacity: 0.25;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+header figure img {
+  width: 160px;
+  margin-bottom: 15px;
+  /* filter: drop-shadow(0 0 1px var(--acento)); */
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: var(--acento);
+  text-shadow: 2px 2px 6px #000;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--gris-suave);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes faro {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .container {
@@ -59,7 +122,7 @@ body {
 
 .container h1 {
   font-size: 2rem;
-  color: var(--liberator-green);
+  color: #f5f5f5;
   margin-bottom: 20px;
 }
 
@@ -69,7 +132,7 @@ body {
   gap: 10px;
   justify-content: center;
   position: fixed;
-  top: 20px;
+  top: 210px;
   left: 20px;
   z-index: 1000;
 }
@@ -131,7 +194,7 @@ body {
   animation: fadeIn 0.6s ease-in-out;
   font-size: 14px;
   position: fixed;
-  top: 70px;
+  top: 270px;
   left: 20px;
   max-height: 80vh;
   overflow-y: auto;
@@ -352,26 +415,29 @@ button:hover {
   opacity: 0;
   pointer-events: none;
 }
+
 .btn-home {
-    position: fixed;
-    bottom:  20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.5s;
-      z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.5s;
 }
+
 .btn-home:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 .btn-home img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
+
 /* Responsivo móvil */
 @media (max-width: 600px) {
   .pergamino {
@@ -391,6 +457,11 @@ button:hover {
   .pergamino p {
     top: 160px;
     font-size: 14px;
+  }
+
+  .btn-home {
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -414,6 +485,11 @@ button:hover {
 
   .button-group button {
     flex: 1 1 100%;
+  }
+
+  .btn-home {
+    width: 70px;
+    height: 70px;
   }
 }
 
