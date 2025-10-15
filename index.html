@@ -15,6 +15,7 @@
     <div class="loader-content">
       <!-- SVG silueta histórica -->
       <div class="silhouette">
+
         <img src="assets/imgs/Museo-Ruta-de-la-Libertad-Blanco.png" alt="Silueta Ejército Libertador">
       </div>
       <div class="mensaje-loader">
@@ -32,59 +33,84 @@
         <h1>LA RUTA DE LA LIBERTAD, 1819</h1>
         <p>Explora actividades educativas que reviven la historia</p>
       </div>
-      <figure ><img src="assets/imgs/Museo-Ruta-de-la-Libertad-Blanco.png" style="width: 250px;" alt="Logo" /></figure>
+      <figure><img src="assets/imgs/Museo-Ruta-de-la-Libertad-Blanco.png" style="width: 250px;" alt="Logo" /></figure>
     </div>
-  </header> 
+  </header>
 
   <!-- <marquee behavior="scroll" direction="right" scrollamount="40"> -->
   <main>
+    <fieldset>
+      <legend>Batalla de Boyacá</legend>
 
-    <div class="card-container">
-      <div class="card" onclick="irActividad('src/pages/Rompecabezas/rompecabezas.html')">
-        <img src="assets/imgs/rompecabezas.png" alt="Rompecabezas">
-        <div class="info">
-          <h2>Reconstrucción de los hechos</h2>
-          <p>Arma la imagen con piezas interactivas de los lugares recorridos durante la Ruta Libertadora.</p>
+      <div class="card-container">
+        <div class="card" onclick="irActividad('src/pages/Rompecabezas/rompecabezas.html')">
+          <img src="assets/imgs/rompecabezas.png" alt="Rompecabezas">
+          <div class="info">
+            <h2>Reconstrucción de los hechos</h2>
+            <p>Arma la imagen con piezas interactivas de los lugares recorridos durante la Ruta Libertadora.</p>
+          </div>
+        </div>
+        <div class="card" onclick="irActividad('src/pages/Memoria/memoria.html')">
+          <img src="assets/imgs/memoria.png" alt="Juego de Memoria">
+          <div class="info">
+            <h2>Estrategas en el Campo de Boyacá</h2>
+            <p>Relaciona imágenes y momentos clave que marcaron el avance de la Ruta Libertadora de 1819 en Colombia.
+            </p>
+          </div>
+        </div>
+        <div class="card" onclick="irActividad('src/pages/Relación/relacion.html')">
+          <img src="assets/imgs/relacion.png" alt="Relación">
+          <div class="info">
+            <h2>Cartas de la Batalla de Boyacá</h2>
+            <p>Une textos y sitios históricos de forma interactiva mientras descubres la Ruta Libertadora.</p>
+          </div>
+        </div>
+        <div class="card" onclick="irActividad('src/pages/Chat-Bot/chat-bot.html')">
+          <img src="assets/imgs/chat-bot.png" alt="chat-bot">
+          <div class="info">
+            <h2>Pregunta y aprende</h2>
+            <p>Chatea y descubre datos curiosos e históricos sobre la gesta de la Ruta Libertadora.</p>
+          </div>
+        </div>
+        <div class="card" onclick="irActividad('src/pages/advina-personaje/adivina-personaje.html')">
+          <img src="assets/imgs/adivina.png" alt="advina-personaje">
+          <div class="info">
+            <h2>¿Quién es quién en la Batalla de Boyacá?</h2>
+            <p>Identifica al personaje según sus características y su papel en la Ruta Libertadora.</p>
+          </div>
+        </div>
+        <div class="card" onclick="irActividad('src/pages/vocesBoyaca/voces_Boyaca.html')">
+          <img src="assets/imgs/voces_boyaca.png" alt="Voces-Boyacá">
+          <div class="info">
+            <h2>Voces de Boyacá</h2>
+            <p>Explora las voces de héroes y heroínas a través de una experiencia interactiva y sonora.
+            </p>
+          </div>
+        </div>
+        <div class="card" onclick="irActividad('src/pages/libro/libro.html')">
+          <img src="assets/imgs/icon_libro.png" alt="Dias-previos">
+          <div class="info">
+            <h2>Días Previos</h2>
+            <p>Explora los días previos a la Batalla de Boyacá, donde se forjaron las decisiones y estrategias que
+              llevaron a la victoria.</p>
+            </p>
+          </div>
         </div>
       </div>
-      <div class="card" onclick="irActividad('src/pages/Memoria/memoria.html')">
-        <img src="assets/imgs/memoria.png" alt="Juego de Memoria">
-        <div class="info">
-          <h2>Estrategas en el Campo de Boyacá</h2>
-          <p>Relaciona imágenes y momentos clave que marcaron el avance de la Ruta Libertadora de 1819 en Colombia.</p>
-        </div>
-      </div>
-      <div class="card" onclick="irActividad('src/pages/Relación/relacion.html')">
-        <img src="assets/imgs/relacion.png" alt="Relación">
-        <div class="info">
-          <h2>Cartas de la Batalla de Boyacá</h2>
-          <p>Une textos y sitios históricos de forma interactiva mientras descubres la Ruta Libertadora.</p>
-        </div>
-      </div>
-      <div class="card" onclick="irActividad('src/pages/Chat-Bot/chat-bot.html')">
-        <img src="assets/imgs/chat-bot.png" alt="chat-bot">
-        <div class="info">
-          <h2>Pregunta y aprende</h2>
-          <p>Chatea y descubre datos curiosos e históricos sobre la gesta de la Ruta Libertadora.</p>
-        </div>
-      </div>
-      <div class="card" onclick="irActividad('src/pages/advina-personaje/adivina-personaje.html')">
-        <img src="assets/imgs/adivina.png" alt="advina-personaje">
-        <div class="info">
-          <h2>¿Quién es quién en la Batalla de Boyacá?</h2>
-          <p>Identifica al personaje según sus características y su papel en la Ruta Libertadora.</p>
-        </div>
-      </div>
-      <div class="card" onclick="irActividad('src/pages/vocesBoyaca/voces_Boyaca.html')">
-        <img src="assets/imgs/voces_boyaca.png" alt="Voces-Boyacá">
-        <div class="info">
-          <h2>Voces de Boyacá</h2>
-          <p>Explora las voces de héroes y heroínas a través de una experiencia interactiva y sonora.
-          </p>
-        </div>
-      </div>
+    </fieldset>
 
-    </div>
+    <fieldset>
+      <legend>Combate de Paya</legend>
+      <div class="card-container">
+        <div class="card" onclick="irActividad('src/pages/Rompecabezas/rompecabezas.html')">
+          <img src="assets/imgs/rompecabezas.png" alt="Rompecabezas">
+          <div class="info">
+            <h2>Reconstrucción de los hechos</h2>
+            <p>Arma la imagen con piezas interactivas de los lugares recorridos durante la Ruta Libertadora.</p>
+          </div>
+        </div>
+      </div>
+    </fieldset>
   </main>
   <!-- </marquee> -->
 
